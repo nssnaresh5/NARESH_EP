@@ -1,0 +1,19 @@
+digraph "Class Diagram" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Class Diagram" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"77614508fd29493ca746b11611cd8911" [label=Car height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	e76c5723f6084e7b919f97c60b9f4cca [label=ElectricCar height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	"00d324ad60054ba6a106a03279635ba3" [label=Pet height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	"5ff61fe24e3b4966831994d37f466ede" [label=Dog height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	e15282e5a6f848cca052d14e836aa739 [label=Cat height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	"413c8ebb851d49bf8210ffdd678fe49a" [label=AbstractClassExample height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	"0412ddaf0b094581b7cbbc80417b2df5" [label=AnotherSubclass height=1.9 image="C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\NARESH_EP\.venv\lib\site-packages\resources/programming/language\python.png" shape=none]
+	"77614508fd29493ca746b11611cd8911" -> e76c5723f6084e7b919f97c60b9f4cca [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"00d324ad60054ba6a106a03279635ba3" -> "5ff61fe24e3b4966831994d37f466ede" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"00d324ad60054ba6a106a03279635ba3" -> e15282e5a6f848cca052d14e836aa739 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"413c8ebb851d49bf8210ffdd678fe49a" -> "0412ddaf0b094581b7cbbc80417b2df5" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph cluster_Inheritance {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Inheritance labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+	}
+}
