@@ -1,0 +1,1676 @@
+{
+  "serviceMapping": {
+    "commonDeviceAttributes": {
+      "id": "faf57db1-cdf5-4cd8-a416-df4650003ab4",
+      "globalVariables": [
+        "deviceId",
+        "electricalDatapoint",
+        "modbusNodeId"
+      ],
+      "services": [
+        {
+          "globalVariable": "deviceId",
+          "reqType": "GET",
+          "serviceUrl": "devices/<deviceId>",
+          "rank": 1,
+          "params": [
+            {
+              "paramName": "deviceId",
+              "paramsType": "FromClientApp",
+              "refType": "None",
+              "rank": 0,
+              "path": "",
+              "conditions": []
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "deviceId"
+          }
+        },
+        {
+          "globalVariable": "electricalDatapoint",
+          "reqType": "GET",
+          "serviceUrl": "data-points/<dataPointId>",
+          "rank": 2,
+          "params": [
+            {
+              "paramName": "dataPointId",
+              "paramsType": "PathRef",
+              "refType": "ListWithConditionOnResponse",
+              "rank": 1,
+              "path": "sensor._links.hasDataPoints._id",
+              "conditions": [
+                {
+                  "propertyName": "type",
+                  "operator": "Equals",
+                  "value": "ELECTRICAL"
+                }
+              ]
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "electricalDatapoint",
+            "type": "ELECTRICAL"
+          }
+        },
+        {
+          "globalVariable": "modbusNodeId",
+          "reqType": "GET",
+          "serviceUrl": "communication-nodes/<node_Id>",
+          "rank": 3,
+          "params": [
+            {
+              "paramName": "node_Id",
+              "paramsType": "PathRef",
+              "refType": "ListWithConditionOnResponse",
+              "rank": 1,
+              "path": "communication._links.hasNodes._id",
+              "conditions": [
+                {
+                  "propertyName": "port.type",
+                  "operator": "Equals",
+                  "value": "MODBUS_VIRTUAL"
+                }
+              ]
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "modbusNodeId",
+            "port": {
+              "type": "ZIGBEE_PRO"
+            }
+          }
+        }
+      ]
+    },
+    "categories": [
+      {
+        "id": "bb23da89-9b4d-4346-b91a-8da0f7041d99",
+        "pdmShortNameIds": [
+          "pdmShortNameID-IsIncomer",
+          "pdmShortNameID-RatedVoltage",
+          "pdmShortNameID-Loadname",
+          "pdmShortNameID-Zone",
+          "OpTimeLoadPStrVal",
+          "LPHD1_InstallationFromBrk",
+          "LPHD1_ARtg",
+          "pdmShortNameID-TripCurve",
+          "LPHD1_CircuitID",
+          "LPHD1_ProductCode"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices?hasFacet=ELECTRICAL&hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "devices": [
+                  {
+                    "_id": "someIdLocalToServer",
+                    "commercialReference": "LV43v09",
+                    "address": "slaveAddress | IEEEAddress | rfid"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "devices._id",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "Incomer #1",
+                "label": "LPHD1_CircuitID",
+                "healthState": "NOMINAL",
+                "quality": "GOOD",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "label": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "communication": {
+                  "pdmIdentifier": "15144",
+                  "vendorUrl": "https://se.com",
+                  "isRoot": "false",
+                  "isOn": "true",
+                  "healthState": "NOMINAL",
+                  "commissioningHint": "Electropole - Main Switchboard",
+                  "identifyTimer": "0",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "commissioningHint": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "identifyTimer": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    },
+                    "hasNodes": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "hasUpstreamNetworking": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasUpstreamNetworkingSettingGroup": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDateTime": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "identification": {
+                  "brand": "Schneider Electric",
+                  "commercialReference": "LV43v09",
+                  "serialNumber": "abcdef-12345-ghij",
+                  "range": "LPHD1_ProductCode",
+                  "model": "6.3.e",
+                  "family": "circuit-breaker",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "brand": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "commercialReference": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "serialNumber": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "range": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "model": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "family": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "sensor": {
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasDataPoints": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ]
+                  }
+                },
+                "firmware": {
+                  "version": "2.2.0",
+                  "updateProtocol": "IP",
+                  "mode": "BOOT",
+                  "quality": "GOOD"
+                },
+                "hardware": {
+                  "version": "1.2.1",
+                  "type": "Engineering Prototype",
+                  "quality": "GOOD"
+                },
+                "backup": {
+                  "name": "Backup V1.2 of 2021-W18",
+                  "createdAt": "2017-08-18T16:00:40+05:30",
+                  "restoredAt": "2017-08-18T16:00:40+05:30",
+                  "quality": "GOOD"
+                },
+                "electrical": {
+                  "type": "BREAKER_WITH_LOAD",
+                  "isIncomer": "pdmShortNameID-IsIncomer",
+                  "ratedCurrent": "LPHD1_ARtg",
+                  "ratedVoltage": "pdmShortNameID-RatedVoltage",
+                  "tripCurveType": "pdmShortNameID-TripCurve",
+                  "quality": "GOOD",
+                  "_links": {
+                    "LPHD1_InstallationFromBrk": {
+                      "_id": "datapointID"
+                    }
+                  },
+                  "load": {
+                    "name": "pdmShortNameID-Loadname",
+                    "zone": "pdmShortNameID-Zone",
+                    "worksWhenPowerGreaterThan": "OpTimeLoadPStrVal",
+                    "_links": {
+                      "hasMetadata": {
+                        "name": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "zone": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "worksWhenPowerGreaterThan": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "panel": {
+                  "name": "Panel #1",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "name": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "scheduling": {
+                  "state": "AUTO",
+                  "digitalInputMode": "MODE_PERMANENT_ON",
+                  "quality": "GOOD",
+                  "healthState": "NOMINAL",
+                  "_links": {
+                    "hasSchedules": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "digitalInput": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "controls": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "state": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "digitalInputMode": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "location": {
+                  "latitude": "-17.660199",
+                  "longitude": "-149.597837",
+                  "_links": {
+                    "hasMetadata": {
+                      "latitude": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "longitude": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices?hasFacet=ELECTRICAL&hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_timeToLive": "5",
+                "devices": [
+                  {
+                    "_id": "someIdLocalToServer",
+                    "commercialReference": "LV43v09",
+                    "address": "slaveAddress | IEEEAddress | rfid"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "POST",
+              "serviceUrl": "devices",
+              "rank": 2,
+              "params": [],
+              "requestBody": {
+                "label": "LPHD1_CircuitID",
+                "identification": {
+                  "range": "LPHD1_ProductCode"
+                },
+                "electrical": {
+                  "isIncomer": "pdmShortNameID-IsIncomer",
+                  "ratedCurrent": "LPHD1_ARtg",
+                  "ratedVoltage": "pdmShortNameID-RatedVoltage",
+                  "tripCurveType": "pdmShortNameID-TripCurve",
+                  "load": {
+                    "name": "pdmShortNameID-Loadname",
+                    "zone": "pdmShortNameID-Zone",
+                    "worksWhenPowerGreaterThan": "OpTimeLoadPStrVal"
+                  },
+                  "_links": {
+                    "LPHD1_InstallationFromBrk": {
+                      "_id": "datapointID"
+                    }
+                  }
+                }
+              },
+              "preConditions": [
+                {
+                  "paramName": "",
+                  "paramsType": "None",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "",
+                  "conditions": [
+                    {
+                      "propertyName": "devices._id",
+                      "operator": "Equals",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "devices._id",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "label": "LPHD1_CircuitID",
+                "identification": {
+                  "range": "LPHD1_ProductCode"
+                },
+                "electrical": {
+                  "isIncomer": "pdmShortNameID-IsIncomer",
+                  "ratedCurrent": "LPHD1_ARtg",
+                  "ratedVoltage": "pdmShortNameID-RatedVoltage",
+                  "tripCurveType": "pdmShortNameID-TripCurve",
+                  "load": {
+                    "name": "pdmShortNameID-Loadname",
+                    "zone": "pdmShortNameID-Zone",
+                    "worksWhenPowerGreaterThan": "OpTimeLoadPStrVal"
+                  },
+                  "_links": {
+                    "LPHD1_InstallationFromBrk": {
+                      "_id": "datapointID"
+                    }
+                  }
+                }
+              },
+              "preConditions": [
+                {
+                  "paramName": "",
+                  "paramsType": "None",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "",
+                  "conditions": [
+                    {
+                      "propertyName": "devices._id",
+                      "operator": "NotEquals",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "5a31e423-3dc2-458f-9d33-a642f7d61275",
+        "pdmShortNameIds": [
+          "LPHD1_Usage"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "usages?hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "usages": [
+                  {
+                    "_id": "LPHD1_Usage",
+                    "name": "Lighting"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "usages?hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_timeToLive": "5",
+                "usages": [
+                  {
+                    "_id": "LPHD1_Usage",
+                    "name": "Lighting"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "usages/<usageId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "usageId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "usages._id",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "Lighting",
+                "type": "LightingUsageId",
+                "rank": "1",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  },
+                  "hasDataPoints": [
+                    {
+                      "_id": "someIdLocalToServer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "usages/<usageId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "usageId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 2,
+                  "path": "_id",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {},
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "7472135c-e7e9-4d78-99e3-4b8f77d8a5b4",
+        "pdmShortNameIds": [
+          "LPHD1_PowSupCfg",
+          "LPHD1_PhsRot",
+          "pdmShortNameID-PowerFactorSign"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "data-points/<dataPointId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "dataPointId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "type": "ELECTRICAL",
+                "electrical": {
+                  "slot1Phase": "+A",
+                  "slot2Phase": "+A",
+                  "slot3Phase": "+A",
+                  "slot4Phase": "+A",
+                  "neutralVT": true,
+                  "powerFactorSign": "pdmShortNameID-PowerFactorSign",
+                  "quality": "GOOD",
+                  "operationCounter": "5",
+                  "_links": {
+                    "hasMetadata": {
+                      "slot1Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot2Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot3Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot4Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "neutralVT": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "powerFactorSign": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "_links": {
+                  "hasMeasurements": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasAlarms": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasEvents": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasControls": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "belongsToDevice": {
+                    "_id": "someIdLocalToServer"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "data-points/<dataPointId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "dataPointId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "electrical": {
+                  "slot2Phase": "+A",
+                  "powerFactorSign": "pdmShortNameID-PowerFactorSign"
+                }
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "a8262fd1-0943-42ad-9283-49595d9e9396",
+        "pdmShortNameIds": [
+          "LPHD1_UserAppliName",
+          "pdmShortNameID-AssetName"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/deviceId",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "pdmShortNameID-AssetName",
+                "label": "LPHD1_UserAppliName",
+                "healthState": "NOMINAL",
+                "quality": "GOOD",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "label": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "communication": {
+                  "pdmIdentifier": "15144",
+                  "vendorUrl": "https://se.com",
+                  "isRoot": "false",
+                  "isOn": "true",
+                  "healthState": "NOMINAL",
+                  "commissioningHint": "Electropole - Main Switchboard",
+                  "identifyTimer": "0",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "commissioningHint": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "identifyTimer": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    },
+                    "hasNodes": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "hasUpstreamNetworking": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasUpstreamNetworkingSettingGroup": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDateTime": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "identification": {
+                  "brand": "Schneider Electric",
+                  "commercialReference": "LV43v09",
+                  "serialNumber": "abcdef-12345-ghij",
+                  "range": "compact NSX",
+                  "model": "6.3.e",
+                  "family": "circuit-breaker",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "brand": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "commercialReference": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "serialNumber": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "range": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "model": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "family": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "sensor": {
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasDataPoints": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ]
+                  }
+                },
+                "firmware": {
+                  "version": "2.2.0",
+                  "updateProtocol": "IP",
+                  "mode": "BOOT",
+                  "quality": "GOOD"
+                },
+                "hardware": {
+                  "version": "1.2.1",
+                  "type": "Engineering Prototype",
+                  "quality": "GOOD"
+                },
+                "backup": {
+                  "name": "Backup V1.2 of 2021-W18",
+                  "createdAt": "2017-08-18T16:00:40+05:30",
+                  "restoredAt": "2017-08-18T16:00:40+05:30",
+                  "quality": "GOOD"
+                },
+                "electrical": {
+                  "type": "BREAKER_WITH_LOAD",
+                  "isIncomer": "false",
+                  "ratedCurrent": "32",
+                  "ratedVoltage": "230",
+                  "tripCurveType": "B",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasUpstreamDataPoint": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDownstreamDataPoint": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "type": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "isIncomer": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "ratedCurrent": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "ratedVoltage": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "tripCurveType": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  },
+                  "load": {
+                    "name": "Lights of the main hall",
+                    "zone": "Main hall",
+                    "worksWhenPowerGreaterThan": "100",
+                    "_links": {
+                      "hasMetadata": {
+                        "name": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "zone": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "worksWhenPowerGreaterThan": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "panel": {
+                  "name": "Panel #1",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "name": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "scheduling": {
+                  "state": "AUTO",
+                  "digitalInputMode": "MODE_PERMANENT_ON",
+                  "quality": "GOOD",
+                  "healthState": "NOMINAL",
+                  "_links": {
+                    "hasSchedules": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "digitalInput": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "controls": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "state": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "digitalInputMode": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "location": {
+                  "latitude": "-17.660199",
+                  "longitude": "-149.597837",
+                  "_links": {
+                    "hasMetadata": {
+                      "latitude": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "longitude": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/deviceId",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "name": "pdmShortNameID-AssetName",
+                "label": "LPHD1_UserAppliName"
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "fbb59215-dfae-4083-899d-fcce7eb41932",
+        "pdmShortNameIds": [
+          "MBSL_LCCH1_Address"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "communication-nodes/<nodeId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "nodeId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/modbusNodeId",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "_id": "someIdLocalToServer",
+                "port": {
+                  "type": "MODBUS_SL",
+                  "name": "Port 1",
+                  "rank": "1",
+                  "isMaster": "true",
+                  "connectionStatus": "JOINING",
+                  "signalQuality": "EXCELLENT",
+                  "address": "MBSL_LCCH1_Address",
+                  "quality": "GOOD",
+                  "_links": {
+                    "belongsToDevice": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "isPartOfNetwork": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "transmits": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "derives": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "rank": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "address": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  },
+                  "modbusSerialLine": {
+                    "timeout": "1000",
+                    "isSerialLinePolarized": "true",
+                    "hasTerminatorResistance": "true",
+                    "_links": {
+                      "hasMetadata": {
+                        "timeout": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "isSerialLinePolarized": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "hasTerminatorResistance": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  },
+                  "modbusTcp": {
+                    "connectionTimeout": "1000",
+                    "messageTimeout": "1000",
+                    "_links": {
+                      "hasMetadata": {
+                        "connectionTimeout": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "messageTimeout": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  },
+                  "zigbee": {
+                    "lqi": "2",
+                    "rssi": "3",
+                    "packetErrorRate": "15"
+                  },
+                  "digitalIO": {
+                    "invert": true,
+                    "_links": {
+                      "hasMetadata": {
+                        "invert": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "communication-nodes/<nodeId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "nodeId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/modbusNodeId",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "port": {
+                  "address": "MBSL_LCCH1_Address"
+                }
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      }
+    ],
+    "alarms": [
+      {
+        "id": "81e4cca2-4c0a-4d13-a8b4-95b7b5721d28",
+        "pdmShortNameIds": [
+          "CALH1_IOverloadAlm",
+          "CALH1_OverVAlm",
+          "CALH1_AEFAlm"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "data-points/<dataPointId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "dataPointId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "type": "ELECTRICAL",
+                "electrical": {
+                  "slot1Phase": "+A",
+                  "slot2Phase": "+A",
+                  "slot3Phase": "+A",
+                  "slot4Phase": "+A",
+                  "neutralVT": true,
+                  "powerFactorSign": "IEC",
+                  "quality": "GOOD",
+                  "operationCounter": "5",
+                  "_links": {
+                    "hasMetadata": {
+                      "slot1Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot2Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot3Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot4Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "neutralVT": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "powerFactorSign": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "_links": {
+                  "hasMeasurements": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasAlarms": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasEvents": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasControls": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "belongsToDevice": {
+                    "_id": "someIdLocalToServer"
+                  }
+                }
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "alarms/<alarmId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "alarmId",
+                  "paramsType": "PathRef",
+                  "refType": "ListWithCondition",
+                  "rank": 1,
+                  "path": "_links.hasAlarms._id",
+                  "conditions": [
+                    {
+                      "propertyName": "_links.hasAlarms.pdmShortNameId",
+                      "operator": "Equals",
+                      "value": "CALH1_IOverloadAlm"
+                    }
+                  ]
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "timestamp": "2017-08-18T16:00:40+05:30",
+                "pdmShortNameId": "Whr",
+                "quality": "GOOD",
+                "detection": "NOT_DETECTED",
+                "isShelved": "true",
+                "isConfirmed": "true",
+                "isAcknowledged": "false",
+                "isActive": "true",
+                "pickupThreshold": "CALH1_IOverloadAlm",
+                "pickupDelay": "1000",
+                "dropoutThreshold": "0.7",
+                "dropoutDelay": "1000",
+                "_links": {
+                  "hasMetadata": {
+                    "pickupThreshold": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "pickupDelay": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "dropoutThreshold": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "dropoutDelay": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "alarms/<alarmId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "alarmId",
+                  "paramsType": "PathRef",
+                  "refType": "ListWithCondition",
+                  "rank": 1,
+                  "path": "_links.hasAlarms._id",
+                  "conditions": [
+                    {
+                      "propertyName": "_links.hasAlarms.pdmShortNameId",
+                      "operator": "Equals",
+                      "value": "CALH1_OverVAlm"
+                    }
+                  ]
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "timestamp": "2017-08-18T16:00:40+05:30",
+                "pdmShortNameId": "Whr",
+                "quality": "GOOD",
+                "detection": "NOT_DETECTED",
+                "isShelved": "true",
+                "isConfirmed": "true",
+                "isAcknowledged": "false",
+                "isActive": "true",
+                "pickupThreshold": "CALH1_OverVAlm",
+                "pickupDelay": "1000",
+                "dropoutThreshold": "0.7",
+                "dropoutDelay": "1000",
+                "_links": {
+                  "hasMetadata": {
+                    "pickupThreshold": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "pickupDelay": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "dropoutThreshold": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "dropoutDelay": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "alarms/<alarmId>",
+              "rank": 4,
+              "params": [
+                {
+                  "paramName": "alarmId",
+                  "paramsType": "PathRef",
+                  "refType": "ListWithCondition",
+                  "rank": 1,
+                  "path": "_links.hasAlarms._id",
+                  "conditions": [
+                    {
+                      "propertyName": "_links.hasAlarms.pdmShortNameId",
+                      "operator": "Equals",
+                      "value": "CALH1_AEFAlm"
+                    }
+                  ]
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "timestamp": "2017-08-18T16:00:40+05:30",
+                "pdmShortNameId": "Whr",
+                "quality": "GOOD",
+                "detection": "NOT_DETECTED",
+                "isShelved": "true",
+                "isConfirmed": "true",
+                "isAcknowledged": "false",
+                "isActive": "true",
+                "pickupThreshold": "CALH1_AEFAlm",
+                "pickupDelay": "1000",
+                "dropoutThreshold": "0.7",
+                "dropoutDelay": "1000",
+                "_links": {
+                  "hasMetadata": {
+                    "pickupThreshold": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "pickupDelay": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "dropoutThreshold": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "dropoutDelay": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "data-points/<dataPointId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "dataPointId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "type": "ELECTRICAL",
+                "electrical": {
+                  "slot1Phase": "+A",
+                  "slot2Phase": "+A",
+                  "slot3Phase": "+A",
+                  "slot4Phase": "+A",
+                  "neutralVT": true,
+                  "powerFactorSign": "IEC",
+                  "quality": "GOOD",
+                  "operationCounter": "5",
+                  "_links": {
+                    "hasMetadata": {
+                      "slot1Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot2Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot3Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot4Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "neutralVT": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "powerFactorSign": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "_links": {
+                  "hasMeasurements": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasAlarms": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasEvents": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasControls": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "belongsToDevice": {
+                    "_id": "someIdLocalToServer"
+                  }
+                }
+              }
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "alarms/<alarmId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "alarmId",
+                  "paramsType": "PathRef",
+                  "refType": "ListWithCondition",
+                  "rank": 1,
+                  "path": "_links.hasAlarms._id",
+                  "conditions": [
+                    {
+                      "propertyName": "_links.hasAlarms.pdmShortNameId",
+                      "operator": "Equals",
+                      "value": "CALH1_IOverloadAlm"
+                    }
+                  ]
+                }
+              ],
+              "requestBody": {
+                "pickupThreshold": "CALH1_IOverloadAlm"
+              },
+              "preConditions": []
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "alarms/<alarmId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "alarmId",
+                  "paramsType": "PathRef",
+                  "refType": "ListWithCondition",
+                  "rank": 1,
+                  "path": "_links.hasAlarms._id",
+                  "conditions": [
+                    {
+                      "propertyName": "_links.hasAlarms.pdmShortNameId",
+                      "operator": "Equals",
+                      "value": "CALH1_OverVAlm"
+                    }
+                  ]
+                }
+              ],
+              "requestBody": {
+                "pickupThreshold": "CALH1_OverVAlm"
+              },
+              "preConditions": []
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "alarms/<alarmId>",
+              "rank": 4,
+              "params": [
+                {
+                  "paramName": "alarmId",
+                  "paramsType": "PathRef",
+                  "refType": "ListWithCondition",
+                  "rank": 1,
+                  "path": "_links.hasAlarms._id",
+                  "conditions": [
+                    {
+                      "propertyName": "_links.hasAlarms.pdmShortNameId",
+                      "operator": "Equals",
+                      "value": "CALH1_AEFAlm"
+                    }
+                  ]
+                }
+              ],
+              "requestBody": {
+                "pickupThreshold": "CALH1_AEFAlm"
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "advancedSettingsConfig": {
+    "read": [
+      {
+        "id": "7472135c-e7e9-4d78-99e3-4b8f77d8a5b4",
+        "advancedSettings": [
+          {
+            "pdmShortNameId": "LPHD1_PowSupCfg",
+            "dependentSettings": [],
+            "dependentResponseValues": [
+              {
+                "value": "slot2Phase",
+                "rank": 1,
+                "path": "electrical.slot2Phase"
+              }
+            ],
+            "possibleDerivedValues": [
+              {
+                "slot2Phase": "+A",
+                "value": "TOP"
+              },
+              {
+                "slot2Phase": "-A",
+                "value": "BOTTOM"
+              },
+              {
+                "slot2Phase": "+B",
+                "value": "TOP"
+              },
+              {
+                "slot2Phase": "-B",
+                "value": "BOTTOM"
+              },
+              {
+                "slot2Phase": "+C",
+                "value": "TOP"
+              },
+              {
+                "slot2Phase": "-C",
+                "value": "BOTTOM"
+              }
+            ]
+          },
+          {
+            "pdmShortNameId": "LPHD1_PhsRot",
+            "dependentSettings": [],
+            "dependentResponseValues": [
+              {
+                "value": "slot2Phase",
+                "rank": 1,
+                "path": "electrical.slot2Phase"
+              }
+            ],
+            "possibleDerivedValues": [
+              {
+                "slot2Phase": "+A",
+                "value": "A"
+              },
+              {
+                "slot2Phase": "-A",
+                "value": "A"
+              },
+              {
+                "slot2Phase": "+B",
+                "value": "B"
+              },
+              {
+                "slot2Phase": "-B",
+                "value": "B"
+              },
+              {
+                "slot2Phase": "+C",
+                "value": "C"
+              },
+              {
+                "slot2Phase": "-C",
+                "value": "C"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "write": [
+      {
+        "id": "7472135c-e7e9-4d78-99e3-4b8f77d8a5b4",
+        "advancedSettings": [
+          {
+            "attribute": {
+              "value": "slot2Phase",
+              "rank": 1,
+              "path": "electrical.slot2Phase"
+            },
+            "dependentSettings": [
+              "LPHD1_PowSupCfg",
+              "LPHD1_PhsRot"
+            ],
+            "dependentResponseValues": [],
+            "possibleDerivedValues": [
+              {
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_PhsRot": "A",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_PhsRot": "A",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_PhsRot": "B",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_PhsRot": "B",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_PhsRot": "C",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_PhsRot": "C",
+                "value": "-C"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

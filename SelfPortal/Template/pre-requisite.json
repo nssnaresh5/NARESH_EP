@@ -1,0 +1,132 @@
+[
+  {
+    "pdmShortName": "LPHD1_CircuitID",
+    "columnName": "",
+    "type": ""
+  },
+  {
+    "pdmShortName": "LPHD1_UserAppliName",
+    "columnName": "",
+    "type": ""
+  },
+  {
+    "pdmShortName": "LPHD1_ARtg",
+    "columnName": "Ir CURRENT\nLIST\n(can be equal to 'In' on certain breaker range \n(eg Acti9))",
+    "type": "Options"
+  },
+  {
+    "pdmShortName": "LPHD1_PhsRot",
+    "columnName": "PHASE\nSEQUENCE\n(PowerTag Energy - A9 Arc)\nXYZ\n(PowerTag Rope-HR)",
+    "type": "Options"
+  },
+  {
+    "pdmShortName": "LPHD1_Usage",
+    "columnName": "",
+    "type": "Options"
+  },
+  {
+    "pdmShortName": "MBSL_LCCH1_Address",
+    "columnName": "",
+    "type": "Range"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-Zone",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-IsIncomer",
+    "columnName": "",
+    "type": "Options"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-PowerFactorSign",
+    "columnName": "",
+    "type": "Options"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-Equipment",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-MeasuredPoint",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-CubicleType",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-CubicleId",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-AssetName",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-CircuitBreakerId",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "LPHD1_InstallationFromBrk",
+    "columnName": "MOUNTING POSITION\n(PowerTag Energy)",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "LPHD1_ProductCode",
+    "columnName": "DEVICE RANGE LIST",
+    "type": "Options"
+  },
+  {
+    "pdmShortName": "LPHD1_PowSupCfg",
+    "columnName": "POWER SUPPLY\n-\nCURRENT FLOW\n(ROPE, HR)",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-Loadname",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "OpTimeLoadPStrVal",
+    "columnName": "",
+    "type": "Range"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-TripCurve",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-RatedVoltage",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-SystemType",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-Sensor",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-DrawerId",
+    "columnName": "",
+    "type": "string"
+  },
+  {
+    "pdmShortName": "pdmShortNameID-FeederId",
+    "columnName": "",
+    "type": "string"
+  }
+]

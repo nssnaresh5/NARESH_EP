@@ -1,0 +1,148 @@
+{
+  "possibleDerivedValues": [
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              }
+            ]
+}

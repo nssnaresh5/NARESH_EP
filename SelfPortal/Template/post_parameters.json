@@ -1,0 +1,1014 @@
+{
+  "driverId": "3476ee3a-2fab-49b6-94ce-448c132a3cad",
+  "parameterConfigurations": [
+    {
+      "id": "3ba29e18-b5c0-4bd5-ace9-903105fb7839",
+      "name": "Associated Breaker Settings",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices",
+            "rank": 1,
+            "description": "List all known Devices [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "in": "query",
+                "name": "hasFacet",
+                "required": "false",
+                "description": "Include only Devices which contain this facet",
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "COMMUNICATION",
+                    "IDENTIFICATION",
+                    "SENSOR",
+                    "FIRMWARE",
+                    "HARDWARE",
+                    "ELECTRICAL",
+                    "PANEL"
+                  ]
+                },
+                "paramName": "hasFacet",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Static",
+                  "conditions": [],
+                  "selectedValue": "ELECTRICAL",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Static",
+                  "paramValue": "ELECTRICAL",
+                  "responseType": "Static",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              },
+              {
+                "in": "query",
+                "name": "hasDataPoint",
+                "required": "false",
+                "description": "Include only Objects which link to this DataPoint",
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                },
+                "paramName": "hasDataPoint",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "electricalDatapoint",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 2,
+            "description": "Get a specific Device [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "deviceId",
+                "required": "true",
+                "description": "Id of the device",
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                },
+                "paramName": "deviceId",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "devices._id",
+                  "selectedPreviousRank": "1",
+                  "ranksArray": [
+                    1
+                  ],
+                  "prevResponses": [
+                    "_timeToLive",
+                    "devices",
+                    "devices._id",
+                    "devices.commercialReference",
+                    "devices.address"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "devices._id",
+                  "responseType": "PreviousResponse",
+                  "conditions": [],
+                  "previousResponseRank": "1"
+                },
+                "paramsType": "path",
+                "isRequired": "true"
+              },
+              {
+                "in": "query",
+                "name": "links",
+                "required": "false",
+                "description": "Specifies whether the links will be provided or not in the response",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "paramName": "links",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "None",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices",
+            "rank": 1,
+            "description": "List all known Devices [APPLICABLE]",
+            "reqType": "Get",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "query",
+                "name": "hasFacet",
+                "required": "false",
+                "description": "Include only Devices which contain this facet",
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "COMMUNICATION",
+                    "IDENTIFICATION",
+                    "SENSOR",
+                    "FIRMWARE",
+                    "HARDWARE",
+                    "ELECTRICAL",
+                    "PANEL"
+                  ]
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Static",
+                  "conditions": [],
+                  "selectedValue": "ELECTRICAL",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Static",
+                  "paramValue": "ELECTRICAL",
+                  "responseType": "Static",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "paramName": "hasFacet",
+                "isRequired": "false"
+              },
+              {
+                "in": "query",
+                "name": "hasDataPoint",
+                "required": "false",
+                "description": "Include only Objects which link to this DataPoint",
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "electricalDatapoint",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "paramName": "hasDataPoint",
+                "isRequired": "false"
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/devices",
+            "rank": 2,
+            "description": "Create a new Devices [APPLICABLE]",
+            "reqType": "Post",
+            "preConditions": [
+              {
+                "paramName": "",
+                "paramsType": "None",
+                "refType": "PreviousResponse",
+                "rank": "1",
+                "path": "",
+                "conditions": [
+                  {
+                    "propertyName": "devices._id",
+                    "operator": "Equals",
+                    "value": ""
+                  }
+                ],
+                "ranksArray": [
+                  1
+                ],
+                "prevResponses": [
+                  "_timeToLive",
+                  "devices",
+                  "devices._id",
+                  "devices.commercialReference",
+                  "devices.address"
+                ]
+              }
+            ],
+            "urlParameters": [
+              {
+                "in": "query",
+                "name": "model",
+                "required": "false",
+                "description": "the modelId",
+                "schema": {
+                  "type": "string",
+                  "example": "modelId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "None",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "paramName": "model",
+                "isRequired": "false"
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 3,
+            "description": "Update a specific Device [APPLICABLE]",
+            "reqType": "Put",
+            "preConditions": [
+              {
+                "paramName": "",
+                "paramsType": "None",
+                "refType": "PreviousResponse",
+                "rank": "1",
+                "path": "",
+                "conditions": [
+                  {
+                    "propertyName": "devices._id",
+                    "operator": "NotEquals",
+                    "value": ""
+                  }
+                ],
+                "ranksArray": [
+                  1,
+                  2
+                ],
+                "prevResponses": [
+                  "_timeToLive",
+                  "devices",
+                  "devices._id",
+                  "devices.commercialReference",
+                  "devices.address"
+                ]
+              }
+            ],
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "deviceId",
+                "required": "true",
+                "description": "Id of the device",
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "devices._id",
+                  "selectedPreviousRank": "1",
+                  "ranksArray": [
+                    1,
+                    2
+                  ],
+                  "prevResponses": [
+                    "_timeToLive",
+                    "devices",
+                    "devices._id",
+                    "devices.commercialReference",
+                    "devices.address"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "devices._id",
+                  "responseType": "PreviousResponse",
+                  "conditions": [],
+                  "previousResponseRank": "1"
+                },
+                "paramsType": "path",
+                "paramName": "deviceId",
+                "isRequired": "true"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "cd8c0833-8ae4-4f43-8179-f5124c4eb73c",
+      "name": "Usage",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/usages",
+            "rank": 1,
+            "description": "List all Usages [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "in": "query",
+                "name": "hasDataPoint",
+                "required": "false",
+                "description": "Include only Objects which link to this DataPoint",
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                },
+                "paramName": "hasDataPoint",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "electricalDatapoint",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/usages",
+            "rank": 1,
+            "description": "List all Usages [APPLICABLE]",
+            "reqType": "Get",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "query",
+                "name": "hasDataPoint",
+                "required": "false",
+                "description": "Include only Objects which link to this DataPoint",
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "electricalDatapoint",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "paramName": "hasDataPoint",
+                "isRequired": "false"
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/usages/{usageId}",
+            "rank": 2,
+            "description": "Get a specific Usage [APPLICABLE]",
+            "reqType": "Get",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "usageId",
+                "required": "true",
+                "description": "Id of the usage",
+                "schema": {
+                  "type": "string",
+                  "example": "usageId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "usages._id",
+                  "selectedPreviousRank": "1",
+                  "ranksArray": [
+                    1
+                  ],
+                  "prevResponses": [
+                    "_timeToLive",
+                    "usages",
+                    "usages._id",
+                    "usages.name"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "usages._id",
+                  "responseType": "PreviousResponse",
+                  "conditions": [],
+                  "previousResponseRank": "1"
+                },
+                "paramsType": "path",
+                "paramName": "usageId",
+                "isRequired": "true"
+              },
+              {
+                "in": "query",
+                "name": "links",
+                "required": "false",
+                "description": "Specifies whether the links will be provided or not in the response",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false"
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/usages/{usageId}",
+            "rank": 3,
+            "description": "Update a specific Usage [APPLICABLE]",
+            "reqType": "Put",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "usageId",
+                "required": "true",
+                "description": "Id of the usage",
+                "schema": {
+                  "type": "string",
+                  "example": "usageId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "_id",
+                  "selectedPreviousRank": "2",
+                  "ranksArray": [
+                    1,
+                    2
+                  ],
+                  "prevResponses": [
+                    "_id",
+                    "_timeToLive",
+                    "_linksTimeToLive",
+                    "name",
+                    "type",
+                    "rank",
+                    "_links",
+                    "_links.hasMetadata",
+                    "_links.hasMetadata.name",
+                    "_links.hasMetadata.name._id",
+                    "_links.hasDataPoints",
+                    "_links.hasDataPoints._id"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "_id",
+                  "responseType": "PreviousResponse",
+                  "conditions": [],
+                  "previousResponseRank": "2"
+                },
+                "paramsType": "path",
+                "paramName": "usageId",
+                "isRequired": "true"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "ad083e54-27a8-49da-bedf-a03b685e30f0",
+      "name": "Power Settings",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/data-points/{dataPointId}",
+            "rank": 1,
+            "description": "Get a specific Data Point [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "dataPointId",
+                "required": "true",
+                "description": "Id of the measurement point",
+                "schema": {
+                  "type": "string",
+                  "example": "dataPointId123"
+                },
+                "paramName": "dataPointId",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "electricalDatapoint",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "path",
+                "isRequired": "true"
+              },
+              {
+                "in": "query",
+                "name": "links",
+                "required": "false",
+                "description": "Specifies whether the links will be provided or not in the response",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "paramName": "links",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "None",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/data-points/{dataPointId}",
+            "rank": 1,
+            "description": "Update a specific Data Point [APPLICABLE]",
+            "reqType": "Put",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "dataPointId",
+                "required": "true",
+                "description": "Id of the measurement point",
+                "schema": {
+                  "type": "string",
+                  "example": "dataPointId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "electricalDatapoint",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "path",
+                "paramName": "dataPointId",
+                "isRequired": "true"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "55f72b02-1dab-492e-8300-83a31683d191",
+      "name": "Device Settings",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 1,
+            "description": "Get a specific Device [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "deviceId",
+                "required": "true",
+                "description": "Id of the device",
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                },
+                "paramName": "deviceId",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "deviceId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "deviceId",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "path",
+                "isRequired": "true"
+              },
+              {
+                "in": "query",
+                "name": "links",
+                "required": "false",
+                "description": "Specifies whether the links will be provided or not in the response",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "paramName": "links",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "None",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 1,
+            "description": "Get a specific Device [APPLICABLE]",
+            "reqType": "Get",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "deviceId",
+                "required": "true",
+                "description": "Id of the device",
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "deviceId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "deviceId",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "path",
+                "paramName": "deviceId",
+                "isRequired": "true"
+              },
+              {
+                "in": "query",
+                "name": "links",
+                "required": "false",
+                "description": "Specifies whether the links will be provided or not in the response",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "None",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "71f8eee2-cfd0-4b19-a446-d35903760dde",
+      "name": "Communication",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/communication-nodes/{nodeId}",
+            "rank": 1,
+            "description": "Get a specific Communication Node [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "nodeId",
+                "required": "true",
+                "description": "Id of the node",
+                "schema": {
+                  "type": "string",
+                  "example": "nodeId123"
+                },
+                "paramName": "nodeId",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "modbusNodeId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "modbusNodeId",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "path",
+                "isRequired": "true"
+              },
+              {
+                "in": "query",
+                "name": "links",
+                "required": "false",
+                "description": "Specifies whether the links will be provided or not in the response",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "paramName": "links",
+                "dynamic": false,
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "",
+                  "responseType": "None",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "query",
+                "isRequired": "false"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/communication-nodes/{nodeId}",
+            "rank": 1,
+            "description": "Update a specific Communication Node [APPLICABLE]",
+            "reqType": "Put",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "in": "path",
+                "name": "nodeId",
+                "required": "true",
+                "description": "Id of the node",
+                "schema": {
+                  "type": "string",
+                  "example": "nodeId123"
+                },
+                "dynamic": false,
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "modbusNodeId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ]
+                },
+                "parameterValue": {
+                  "parameterValueType": "Dynamic",
+                  "paramValue": "modbusNodeId",
+                  "responseType": "Direct",
+                  "conditions": [],
+                  "previousResponseRank": 0
+                },
+                "paramsType": "path",
+                "paramName": "nodeId",
+                "isRequired": "true"
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    }
+  ]
+}

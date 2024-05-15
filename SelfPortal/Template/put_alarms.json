@@ -1,0 +1,68 @@
+{
+  "driverId": "2f47ddf8-12bf-42b6-a13c-6ce603dfa231",
+  "settings": [
+    {
+      "id": "CALH1_IOverloadAlm",
+      "name": "Overload threshold",
+      "inputType": "Scale",
+      "values": null,
+      "range": {
+        "min": 0,
+        "max": 100,
+        "stepValue": 5,
+        "isNoneApplicable": false
+      },
+      "fieldValidation": null,
+      "defaultValue": "",
+      "unitSymbol": "%",
+      "logicalMapping": null,
+      "scaleFactor": 100,
+      "helpText": "Overload threshold indicates the current value above which a notification is sent, in % of the nominal value.",
+      "isMandatory": true,
+      "isReadOnly": false,
+      "helpTextSelect": true
+    },
+    {
+      "id": "CALH1_OverVAlm",
+      "name": "Over voltage",
+      "inputType": "Scale",
+      "values": null,
+      "range": {
+        "min": 100,
+        "max": 120,
+        "stepValue": 1,
+        "isNoneApplicable": false
+      },
+      "fieldValidation": null,
+      "defaultValue": "",
+      "unitSymbol": "%",
+      "logicalMapping": null,
+      "scaleFactor": 100,
+      "helpText": "Over voltage indicates the voltage value above which a notification is sent, in % of the nominal value.",
+      "isMandatory": true,
+      "isReadOnly": false,
+      "helpTextSelect": true
+    },
+    {
+      "id": "CALH1_AEFAlm",
+      "name": " Earth leakage tripping threshold",
+      "inputType": "Scale",
+      "values": null,
+      "range": {
+        "min": 30,
+        "max": 100,
+        "stepValue": 5,
+        "isNoneApplicable": false
+      },
+      "fieldValidation": null,
+      "defaultValue": "",
+      "unitSymbol": "%",
+      "logicalMapping": null,
+      "scaleFactor": 100,
+      "helpText": "E.L. tripping threshold indicates the E.L. current value above which a notification is sent, in % of the nominal value.",
+      "isMandatory": true,
+      "isReadOnly": false,
+      "helpTextSelect": true
+    }
+  ]
+}

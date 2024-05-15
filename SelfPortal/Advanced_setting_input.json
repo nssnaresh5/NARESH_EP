@@ -1,0 +1,230 @@
+{
+  "driverId": "",
+  "advancedSettingsConfigurations": [
+    {
+      "read": [
+        {
+          "id": "",
+          "advancedSettings": [
+            {
+              "pdmShortNameId": "LPHD1_PowSupCfg",
+              "attribute": null,
+              "dependentSettings": [],
+              "dependentResponseValues": [
+                {
+                  "value": "slot2Phase",
+                  "rank": 1,
+                  "path": "electrical.slot2Phase",
+                  "rankResponses": [
+                    "_id",
+                    "_timeToLive",
+                    "_linksTimeToLive",
+                    "type",
+                    "electrical",
+                    "electrical.slot1Phase",
+                    "electrical.slot2Phase",
+                    "electrical.slot3Phase",
+                    "electrical.slot4Phase",
+                    "electrical.neutralVT",
+                    "electrical.powerFactorSign",
+                    "electrical.quality",
+                    "electrical.operationCounter",
+                    "electrical._links",
+                    "electrical._links.hasMetadata",
+                    "electrical._links.hasMetadata.slot1Phase",
+                    "electrical._links.hasMetadata.slot1Phase._id",
+                    "electrical._links.hasMetadata.slot2Phase",
+                    "electrical._links.hasMetadata.slot2Phase._id",
+                    "electrical._links.hasMetadata.slot3Phase",
+                    "electrical._links.hasMetadata.slot3Phase._id",
+                    "electrical._links.hasMetadata.slot4Phase",
+                    "electrical._links.hasMetadata.slot4Phase._id",
+                    "electrical._links.hasMetadata.neutralVT",
+                    "electrical._links.hasMetadata.neutralVT._id",
+                    "electrical._links.hasMetadata.powerFactorSign",
+                    "electrical._links.hasMetadata.powerFactorSign._id",
+                    "_links",
+                    "_links.hasMeasurements",
+                    "_links.hasMeasurements._id",
+                    "_links.hasMeasurements.pdmShortNameId",
+                    "_links.hasAlarms",
+                    "_links.hasAlarms._id",
+                    "_links.hasAlarms.pdmShortNameId",
+                    "_links.hasEvents",
+                    "_links.hasEvents._id",
+                    "_links.hasEvents.pdmShortNameId",
+                    "_links.hasControls",
+                    "_links.hasControls._id",
+                    "_links.hasControls.pdmShortNameId",
+                    "_links.belongsToDevice",
+                    "_links.belongsToDevice._id"
+                  ]
+                }
+              ],
+              "possibleDerivedValues": [
+                {
+                  "slot2Phase": "+A",
+                  "value": "TOP"
+                },
+                {
+                  "slot2Phase": "-A",
+                  "value": "BOTTOM"
+                },
+                {
+                  "slot2Phase": "+B",
+                  "value": "TOP"
+                },
+                {
+                  "slot2Phase": "-B",
+                  "value": "BOTTOM"
+                },
+                {
+                  "slot2Phase": "+C",
+                  "value": "TOP"
+                },
+                {
+                  "slot2Phase": "-C",
+                  "value": "BOTTOM"
+                }
+              ]
+            },
+            {
+              "pdmShortNameId": "LPHD1_PhsRot",
+              "attribute": null,
+              "dependentSettings": [],
+              "dependentResponseValues": [
+                {
+                  "value": "slot2Phase",
+                  "rank": 1,
+                  "path": "electrical.slot2Phase",
+                  "rankResponses": [
+                    "_id",
+                    "_timeToLive",
+                    "_linksTimeToLive",
+                    "type",
+                    "electrical",
+                    "electrical.slot1Phase",
+                    "electrical.slot2Phase",
+                    "electrical.slot3Phase",
+                    "electrical.slot4Phase",
+                    "electrical.neutralVT",
+                    "electrical.powerFactorSign",
+                    "electrical.quality",
+                    "electrical.operationCounter",
+                    "electrical._links",
+                    "electrical._links.hasMetadata",
+                    "electrical._links.hasMetadata.slot1Phase",
+                    "electrical._links.hasMetadata.slot1Phase._id",
+                    "electrical._links.hasMetadata.slot2Phase",
+                    "electrical._links.hasMetadata.slot2Phase._id",
+                    "electrical._links.hasMetadata.slot3Phase",
+                    "electrical._links.hasMetadata.slot3Phase._id",
+                    "electrical._links.hasMetadata.slot4Phase",
+                    "electrical._links.hasMetadata.slot4Phase._id",
+                    "electrical._links.hasMetadata.neutralVT",
+                    "electrical._links.hasMetadata.neutralVT._id",
+                    "electrical._links.hasMetadata.powerFactorSign",
+                    "electrical._links.hasMetadata.powerFactorSign._id",
+                    "_links",
+                    "_links.hasMeasurements",
+                    "_links.hasMeasurements._id",
+                    "_links.hasMeasurements.pdmShortNameId",
+                    "_links.hasAlarms",
+                    "_links.hasAlarms._id",
+                    "_links.hasAlarms.pdmShortNameId",
+                    "_links.hasEvents",
+                    "_links.hasEvents._id",
+                    "_links.hasEvents.pdmShortNameId",
+                    "_links.hasControls",
+                    "_links.hasControls._id",
+                    "_links.hasControls.pdmShortNameId",
+                    "_links.belongsToDevice",
+                    "_links.belongsToDevice._id"
+                  ]
+                }
+              ],
+              "possibleDerivedValues": [
+                {
+                  "slot2Phase": "+A",
+                  "value": "A"
+                },
+                {
+                  "slot2Phase": "-A",
+                  "value": "A"
+                },
+                {
+                  "slot2Phase": "+B",
+                  "value": "B"
+                },
+                {
+                  "slot2Phase": "-B",
+                  "value": "B"
+                },
+                {
+                  "slot2Phase": "+C",
+                  "value": "C"
+                },
+                {
+                  "slot2Phase": "-C",
+                  "value": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "write": [
+        {
+          "id": "",
+          "advancedSettings": [
+            {
+              "pdmShortNameId": null,
+              "attribute": {
+                "value": "slot2Phase",
+                "rank": 1,
+                "path": "electrical.slot2Phase"
+              },
+              "dependentSettings": [
+                "LPHD1_PowSupCfg",
+                "LPHD1_PhsRot"
+              ],
+              "dependentResponseValues": [],
+              "possibleDerivedValues": [
+                {
+                  "LPHD1_PowSupCfg": "TOP",
+                  "LPHD1_PhsRot": "A",
+                  "value": "+A"
+                },
+                {
+                  "LPHD1_PowSupCfg": "BOTTOM",
+                  "LPHD1_PhsRot": "A",
+                  "value": "-A"
+                },
+                {
+                  "LPHD1_PowSupCfg": "TOP",
+                  "LPHD1_PhsRot": "B",
+                  "value": "+B"
+                },
+                {
+                  "LPHD1_PowSupCfg": "BOTTOM",
+                  "LPHD1_PhsRot": "B",
+                  "value": "-B"
+                },
+                {
+                  "LPHD1_PowSupCfg": "TOP",
+                  "LPHD1_PhsRot": "C",
+                  "value": "+C"
+                },
+                {
+                  "LPHD1_PowSupCfg": "BOTTOM",
+                  "LPHD1_PhsRot": "C",
+                  "value": "-C"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

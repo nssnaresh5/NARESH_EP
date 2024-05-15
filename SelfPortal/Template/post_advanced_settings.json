@@ -1,0 +1,183 @@
+{
+  "driverId": "3476ee3a-2fab-49b6-94ce-448c132a3cad",
+  "advancedSettingsConfigurations": [
+    {
+      "read": [
+        {
+          "id": "ad083e54-27a8-49da-bedf-a03b685e30f0",
+          "advancedSettings": [
+            {
+              "pdmShortNameId": "LPHD1_PowSupCfg",
+              "dependentSettings": [
+                "LPHD1_InstallationFromBrk",
+                "LPHD1_InstallationFromBrk"
+              ],
+              "dependentResponseValues": [
+                {
+                  "value": "slot1Phase",
+                  "rank": 1,
+                  "path": "electrical.slot1Phase",
+                  "rankResponses": [
+                    "_id",
+                    "_timeToLive",
+                    "_linksTimeToLive",
+                    "type",
+                    "electrical",
+                    "electrical.slot1Phase",
+                    "electrical.slot2Phase",
+                    "electrical.slot3Phase",
+                    "electrical.slot4Phase",
+                    "electrical.neutralVT",
+                    "electrical.powerFactorSign",
+                    "electrical.quality",
+                    "electrical.operationCounter",
+                    "electrical._links",
+                    "electrical._links.hasMetadata",
+                    "electrical._links.hasMetadata.slot1Phase",
+                    "electrical._links.hasMetadata.slot1Phase._id",
+                    "electrical._links.hasMetadata.slot2Phase",
+                    "electrical._links.hasMetadata.slot2Phase._id",
+                    "electrical._links.hasMetadata.slot3Phase",
+                    "electrical._links.hasMetadata.slot3Phase._id",
+                    "electrical._links.hasMetadata.slot4Phase",
+                    "electrical._links.hasMetadata.slot4Phase._id",
+                    "electrical._links.hasMetadata.neutralVT",
+                    "electrical._links.hasMetadata.neutralVT._id",
+                    "electrical._links.hasMetadata.powerFactorSign",
+                    "electrical._links.hasMetadata.powerFactorSign._id",
+                    "_links",
+                    "_links.hasMeasurements",
+                    "_links.hasMeasurements._id",
+                    "_links.hasMeasurements.pdmShortNameId",
+                    "_links.hasAlarms",
+                    "_links.hasAlarms._id",
+                    "_links.hasAlarms.pdmShortNameId",
+                    "_links.hasEvents",
+                    "_links.hasEvents._id",
+                    "_links.hasEvents.pdmShortNameId",
+                    "_links.hasControls",
+                    "_links.hasControls._id",
+                    "_links.hasControls.pdmShortNameId",
+                    "_links.belongsToDevice",
+                    "_links.belongsToDevice._id"
+                  ]
+                }
+              ],
+              "possibleDerivedValues": [
+                {
+                  "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                  "slot1Phase": "TOP",
+                  "Value": "-A"
+                },
+                {
+                  "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                  "slot1Phase": "BOTTOM",
+                  "Value": "-A"
+                }
+              ]
+            },
+            {
+              "pdmShortNameId": "LPHD1_PhsRot",
+              "dependentSettings": [],
+              "dependentResponseValues": [
+                {
+                  "value": "slot1Phase",
+                  "rank": 1,
+                  "path": "electrical.slot1Phase",
+                  "rankResponses": [
+                    "_id",
+                    "_timeToLive",
+                    "_linksTimeToLive",
+                    "type",
+                    "electrical",
+                    "electrical.slot1Phase",
+                    "electrical.slot2Phase",
+                    "electrical.slot3Phase",
+                    "electrical.slot4Phase",
+                    "electrical.neutralVT",
+                    "electrical.powerFactorSign",
+                    "electrical.quality",
+                    "electrical.operationCounter",
+                    "electrical._links",
+                    "electrical._links.hasMetadata",
+                    "electrical._links.hasMetadata.slot1Phase",
+                    "electrical._links.hasMetadata.slot1Phase._id",
+                    "electrical._links.hasMetadata.slot2Phase",
+                    "electrical._links.hasMetadata.slot2Phase._id",
+                    "electrical._links.hasMetadata.slot3Phase",
+                    "electrical._links.hasMetadata.slot3Phase._id",
+                    "electrical._links.hasMetadata.slot4Phase",
+                    "electrical._links.hasMetadata.slot4Phase._id",
+                    "electrical._links.hasMetadata.neutralVT",
+                    "electrical._links.hasMetadata.neutralVT._id",
+                    "electrical._links.hasMetadata.powerFactorSign",
+                    "electrical._links.hasMetadata.powerFactorSign._id",
+                    "_links",
+                    "_links.hasMeasurements",
+                    "_links.hasMeasurements._id",
+                    "_links.hasMeasurements.pdmShortNameId",
+                    "_links.hasAlarms",
+                    "_links.hasAlarms._id",
+                    "_links.hasAlarms.pdmShortNameId",
+                    "_links.hasEvents",
+                    "_links.hasEvents._id",
+                    "_links.hasEvents.pdmShortNameId",
+                    "_links.hasControls",
+                    "_links.hasControls._id",
+                    "_links.hasControls.pdmShortNameId",
+                    "_links.belongsToDevice",
+                    "_links.belongsToDevice._id"
+                  ]
+                }
+              ],
+              "possibleDerivedValues": [
+                {
+                  "slot1Phase": "A",
+                  "Value": "+A"
+                },
+                {
+                  "slot1Phase": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "write": [
+        {
+          "id": "ad083e54-27a8-49da-bedf-a03b685e30f0",
+          "advancedSettings": [
+            {
+              "pdmShortNameID": null,
+              "attribute": {
+                "rank": "1",
+                "path": "electrical.slot1Phase",
+                "value": "slot1Phase"
+              },
+              "dependentSettings": [
+                "LPHD1_InstallationFromBrk",
+                "LPHD1_PowSupCfg",
+                "LPHD1_PhsRot"
+              ],
+              "dependentResponseValues": [],
+              "possibleDerivedValues": [
+                {
+                  "LPHD1_PhsRot": "A",
+                  "LPHD1_PowSupCfg": "TOP",
+                  "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                  "value": "-A"
+                },
+                {
+                  "LPHD1_PhsRot": "A",
+                  "LPHD1_PowSupCfg": "BOTTOM",
+                  "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                  "value": "+A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

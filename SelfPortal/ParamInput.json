@@ -1,0 +1,1026 @@
+{
+  "driverId": "",
+  "parameterConfigurations": [
+    {
+      "id": "",
+      "name": "Associated breaker settings",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices",
+            "rank": 1,
+            "description": "List all known Devices [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "paramsType": "query",
+                "paramName": "hasFacet",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "Static",
+                  "paramValue": "ELECTRICAL",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "Static",
+                  "conditions": [],
+                  "selectedValue": "ELECTRICAL",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "COMMUNICATION",
+                    "IDENTIFICATION",
+                    "SENSOR",
+                    "FIRMWARE",
+                    "HARDWARE",
+                    "ELECTRICAL",
+                    "PANEL"
+                  ]
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "hasDataPoint",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "electricalDatapoint",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                }
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 2,
+            "description": "Get a specific Device [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "deviceId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "PreviousResponse",
+                  "paramValue": "devices._id",
+                  "previousResponseRank": 1,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "devices._id",
+                  "selectedPreviousRank": 1,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1
+                  ],
+                  "prevResponses": [
+                    "_timeToLive",
+                    "devices",
+                    "devices._id",
+                    "devices.commercialReference",
+                    "devices.address"
+                  ]
+                },
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "None",
+                  "paramValue": "",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1
+                  ]
+                },
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices",
+            "rank": 1,
+            "description": "List all known Devices [APPLICABLE]",
+            "reqType": "GET",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "query",
+                "paramName": "hasFacet",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "Static",
+                  "paramValue": "ELECTRICAL",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "hasFacet",
+                "required": "false",
+                "selectedValue": "ELECTRICAL",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "COMMUNICATION",
+                    "IDENTIFICATION",
+                    "SENSOR",
+                    "FIRMWARE",
+                    "HARDWARE",
+                    "ELECTRICAL",
+                    "PANEL"
+                  ]
+                },
+                "responseType": {
+                  "selected": "Static",
+                  "conditions": [],
+                  "selectedValue": "ELECTRICAL",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "hasDataPoint",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "electricalDatapoint",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "hasDataPoint",
+                "required": "false",
+                "selectedValue": "electricalDatapoint",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                }
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/devices",
+            "rank": 2,
+            "description": "Create a new Devices [APPLICABLE]",
+            "reqType": "POST",
+            "preConditions": [
+              {
+                "paramName": "",
+                "paramsType": "None",
+                "refType": "PreviousResponse",
+                "rank": 1,
+                "path": "",
+                "conditions": [
+                  {
+                    "propertyName": "devices._id",
+                    "operator": "Equals",
+                    "value": ""
+                  }
+                ],
+                "ranksArray": [
+                  1
+                ],
+                "prevResponses": [
+                  "_timeToLive",
+                  "devices",
+                  "devices._id",
+                  "devices.commercialReference",
+                  "devices.address"
+                ]
+              }
+            ],
+            "urlParameters": [
+              {
+                "paramsType": "query",
+                "paramName": "model",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "None",
+                  "paramValue": "",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "model",
+                "required": "false",
+                "selectedValue": "",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "COMMUNICATION",
+                    "IDENTIFICATION",
+                    "SENSOR",
+                    "FIRMWARE",
+                    "HARDWARE",
+                    "ELECTRICAL",
+                    "PANEL"
+                  ]
+                },
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 3,
+            "description": "Update a specific Device [APPLICABLE]",
+            "reqType": "PUT",
+            "preConditions": [
+              {
+                "paramName": "",
+                "paramsType": "None",
+                "refType": "PreviousResponse",
+                "rank": 1,
+                "path": "",
+                "conditions": [
+                  {
+                    "propertyName": "devices._id",
+                    "operator": "NotEquals",
+                    "value": ""
+                  }
+                ],
+                "ranksArray": [
+                  1,
+                  2
+                ],
+                "prevResponses": [
+                  "_timeToLive",
+                  "devices",
+                  "devices._id",
+                  "devices.commercialReference",
+                  "devices.address"
+                ]
+              }
+            ],
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "deviceId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "PreviousResponse",
+                  "paramValue": "devices._id",
+                  "previousResponseRank": 1,
+                  "conditions": []
+                },
+                "name": "deviceId",
+                "required": "true",
+                "selectedValue": "devices._id",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                },
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "devices._id",
+                  "selectedPreviousRank": 1,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1,
+                    2
+                  ],
+                  "prevResponses": [
+                    "_timeToLive",
+                    "devices",
+                    "devices._id",
+                    "devices.commercialReference",
+                    "devices.address"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "",
+      "name": "Usage",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/usages",
+            "rank": 1,
+            "description": "List all Usages [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "paramsType": "query",
+                "paramName": "hasDataPoint",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "electricalDatapoint",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/usages",
+            "rank": 1,
+            "description": "List all Usages [APPLICABLE]",
+            "reqType": "GET",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "query",
+                "paramName": "hasDataPoint",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "electricalDatapoint",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "hasDataPoint",
+                "required": "false",
+                "selectedValue": "electricalDatapoint",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "someIdLocalToServer",
+                  "description": "The Id of this object"
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                }
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/usages/{usageId}",
+            "rank": 2,
+            "description": "Get a specific Usage [APPLICABLE]",
+            "reqType": "GET",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "usageId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "PreviousResponse",
+                  "paramValue": "usages._id",
+                  "previousResponseRank": 1,
+                  "conditions": []
+                },
+                "name": "usageId",
+                "required": "true",
+                "selectedValue": "usages._id",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "usageId123"
+                },
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "usages._id",
+                  "selectedPreviousRank": 1,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1
+                  ],
+                  "prevResponses": [
+                    "_timeToLive",
+                    "usages",
+                    "usages._id",
+                    "usages.name"
+                  ]
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "None",
+                  "paramValue": "",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "links",
+                "required": "false",
+                "selectedValue": "",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                },
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "serviceUrl": "/usages/{usageId}",
+            "rank": 3,
+            "description": "Update a specific Usage [APPLICABLE]",
+            "reqType": "PUT",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "usageId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "PreviousResponse",
+                  "paramValue": "_id",
+                  "previousResponseRank": 2,
+                  "conditions": []
+                },
+                "name": "usageId",
+                "required": "true",
+                "selectedValue": "_id",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "usageId123"
+                },
+                "responseType": {
+                  "selected": "PreviousResponse",
+                  "conditions": [],
+                  "selectedValue": "_id",
+                  "selectedPreviousRank": 2,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": [
+                    1,
+                    2
+                  ],
+                  "prevResponses": [
+                    "_id",
+                    "_timeToLive",
+                    "_linksTimeToLive",
+                    "name",
+                    "type",
+                    "rank",
+                    "_links",
+                    "_links.hasMetadata",
+                    "_links.hasMetadata.name",
+                    "_links.hasMetadata.name._id",
+                    "_links.hasDataPoints",
+                    "_links.hasDataPoints._id"
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "",
+      "name": "Power Settings",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/data-points/{dataPointId}",
+            "rank": 1,
+            "description": "Get a specific Data Point [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "dataPointId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "electricalDatapoint",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "string",
+                  "example": "dataPointId123"
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "None",
+                  "paramValue": "",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/data-points/{dataPointId}",
+            "rank": 1,
+            "description": "Update a specific Data Point [APPLICABLE]",
+            "reqType": "PUT",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "dataPointId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "electricalDatapoint",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "dataPointId",
+                "required": "true",
+                "selectedValue": "electricalDatapoint",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "dataPointId123"
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "electricalDatapoint",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "",
+      "name": "Device Settings",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 1,
+            "description": "Get a specific Device [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "deviceId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "deviceId",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "deviceId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "None",
+                  "paramValue": "",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/devices/{deviceId}",
+            "rank": 1,
+            "description": "Update a specific Device [APPLICABLE]",
+            "reqType": "PUT",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "deviceId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "deviceId",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "deviceId",
+                "required": "true",
+                "selectedValue": "deviceId",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "deviceId123"
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "deviceId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    },
+    {
+      "id": "",
+      "name": "Communication",
+      "read": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/communication-nodes/{nodeId}",
+            "rank": 1,
+            "description": "Get a specific Communication Node [APPLICABLE]",
+            "reqType": "GET",
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "nodeId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "modbusNodeId",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "modbusNodeId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "string",
+                  "example": "nodeId123"
+                }
+              },
+              {
+                "paramsType": "query",
+                "paramName": "links",
+                "isRequired": "false",
+                "parameterValue": {
+                  "responseType": "None",
+                  "paramValue": "",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "responseType": {
+                  "selected": "None",
+                  "conditions": [],
+                  "selectedValue": "",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                },
+                "schema": {
+                  "type": "boolean",
+                  "example": "true"
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      },
+      "write": {
+        "categorySettings": [
+          {
+            "serviceUrl": "/communication-nodes/{nodeId}",
+            "rank": 1,
+            "description": "Update a specific Communication Node [APPLICABLE]",
+            "reqType": "PUT",
+            "preConditions": [],
+            "urlParameters": [
+              {
+                "paramsType": "path",
+                "paramName": "nodeId",
+                "isRequired": "true",
+                "parameterValue": {
+                  "responseType": "Direct",
+                  "paramValue": "modbusNodeId",
+                  "previousResponseRank": 0,
+                  "conditions": []
+                },
+                "name": "nodeId",
+                "required": "true",
+                "selectedValue": "modbusNodeId",
+                "dynamic": "",
+                "dynamicResponses": "",
+                "schema": {
+                  "type": "string",
+                  "example": "nodeId123"
+                },
+                "responseType": {
+                  "selected": "Direct",
+                  "conditions": [],
+                  "selectedValue": "modbusNodeId",
+                  "selectedPreviousRank": 0,
+                  "globalVariables": [
+                    "electricalDatapoint",
+                    "controlDatapoint",
+                    "ambientDatapoint",
+                    "deviceId",
+                    "modbusNodeId"
+                  ],
+                  "ranksArray": []
+                }
+              }
+            ]
+          }
+        ],
+        "advancedSettings": []
+      }
+    }
+  ]
+}

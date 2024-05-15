@@ -1,0 +1,432 @@
+{
+  "device": {
+    "identification": [
+      {
+        "id": "9b366b81-2d0f-491f-bb1d-6f6a2bac7985",
+        "name": "Brand",
+        "value": "Schneider Electric"
+      },
+      {
+        "id": "04ecc388-f97a-4500-b585-64a2ee9dc361",
+        "name": "DeviceFamily",
+        "value": "Wireless Protection"
+      },
+      {
+        "id": "a4cc051e-a8e5-4beb-b16e-1365d1514c1b",
+        "name": "CommercialReference",
+        "value": "A9TAB2640"
+      },
+      {
+        "id": "ea05f575-addf-476e-a3d8-74d6d813bd27",
+        "name": "CommercialRange",
+        "value": "A9TAB2640 Acti9 Active iC40 and iC60 AddOn"
+      }
+    ],
+    "configuration": {
+      "categories": [
+        {
+          "id": "bb23da89-9b4d-4346-b91a-8da0f7041d99",
+          "name": "Associated breaker settings",
+          "settings": [
+            {
+              "id": "pdmShortNameID-IsIncomer",
+              "name": "Main/Incomer",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "True",
+                  "value": "ON"
+                },
+                {
+                  "key": "False",
+                  "value": "OFF"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-RatedVoltage",
+              "name": "Rated Voltage",
+              "inputType": "Scale",
+              "range": {
+                "min": 100,
+                "max": 690,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "V",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-Loadname",
+              "name": "Load name",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 32,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Name of the load applied on the single line diagram (HVAC Motor, Strip Lighting, IT closet,...).",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-Zone",
+              "name": "Zone",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 32,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "OpTimeLoadPStrVal",
+              "name": "Load works when power greater than (W)",
+              "inputType": "Scale",
+              "range": {
+                "min": 10,
+                "max": 15000,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "W",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_InstallationFromBrk",
+              "name": "Mounting Position",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "hasDownstreamDataPoint",
+                  "value": "BOTTOM"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Top : The sensor is mounted on the Top/Line of the protective device (circuit breaker or switch) Bottom : The sensor is mounted on the Bottom / Load of the protective device(circuit breaker or switch).",
+              "isMandatory": true,
+              "isReadOnly": true
+            },
+            {
+              "id": "LPHD1_ARtg",
+              "name": "Rated current",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "6",
+                  "value": "6"
+                },
+                {
+                  "key": "10",
+                  "value": "10"
+                },
+                {
+                  "key": "13",
+                  "value": "13"
+                },
+                {
+                  "key": "16",
+                  "value": "16"
+                },
+                {
+                  "key": "20",
+                  "value": "20"
+                },
+                {
+                  "key": "25",
+                  "value": "25"
+                },
+                {
+                  "key": "32",
+                  "value": "32"
+                },
+                {
+                  "key": "40",
+                  "value": "40"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "A",
+              "helpText": "Value of the circuit breaker or protective device rating. It cannot be higher than Imax of the device.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-TripCurve",
+              "name": "Trip curve type",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "B",
+                  "value": "B"
+                },
+                {
+                  "key": "C",
+                  "value": "C"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_CircuitID",
+              "name": "Associated breaker label",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 5,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_ProductCode",
+              "name": "Reference of breaker",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "Acti9 iC40",
+                  "value": "Acti9 iC40"
+                }
+              ],
+              "defaultValue": "Acti9 iC40",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "5a31e423-3dc2-458f-9d33-a642f7d61275",
+          "name": "Usage",
+          "settings": [
+            {
+              "id": "LPHD1_Usage",
+              "name": "Usage",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "Lighting",
+                  "value": "Lighting"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Select load usage type. It is used to tag and aggregate all consumptions related to an usage for energy analysis: lighting, HVAC...",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "7472135c-e7e9-4d78-99e3-4b8f77d8a5b4",
+          "name": "Power Settings",
+          "settings": [
+            {
+              "id": "LPHD1_PowSupCfg",
+              "name": "Power Supply",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "TOP",
+                  "value": "TOP"
+                },
+                {
+                  "key": "BOTTOM",
+                  "value": "BOTTOM"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Top : The current flow is coming from the top / line power terminals of the protective device Bottom : The current flow is coming from the bottom / load power terminals of the protective device.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_PhsRot",
+              "name": "Phase Sequence",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "A",
+                  "value": "A"
+                },
+                {
+                  "key": "B",
+                  "value": "B"
+                },
+                {
+                  "key": "C",
+                  "value": "C"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "For this device, you can select the phase on which the device is wired.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-PowerFactorSign",
+              "name": "PF sign convention",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "IEC",
+                  "value": "IEC"
+                },
+                {
+                  "key": "IEEE",
+                  "value": "IEEE"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "IEC: PF sign indicates if active power is delivered (+) or received (-). PF takes the same sign as Active power P. default value. IEEE: PF sign indicates if the installation is lagging (-) or leading(+). Commonly used in North America.",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "a8262fd1-0943-42ad-9283-49595d9e9396",
+          "name": "Device Settings",
+          "settings": [
+            {
+              "id": "LPHD1_UserAppliName",
+              "name": "Device label",
+              "inputType": "Text",
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Alphanumerical value assigned to the device on the single line diagram.",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-AssetName",
+              "name": "Asset name",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 1,
+                "maxLength": 32,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "fbb59215-dfae-4083-899d-fcce7eb41932",
+          "name": "Communication",
+          "settings": [
+            {
+              "id": "MBSL_LCCH1_Address",
+              "name": " Modbus address",
+              "inputType": "Scale",
+              "range": {
+                "min": 1,
+                "max": 247,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        }
+      ],
+      "alarms": [
+        {
+          "id": "81e4cca2-4c0a-4d13-a8b4-95b7b5721d28",
+          "name": "Alarms",
+          "settings": [
+            {
+              "id": "CALH1_IOverloadAlm",
+              "name": "Overload threshold",
+              "inputType": "Scale",
+              "range": {
+                "min": 0,
+                "max": 100,
+                "stepValue": 5,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "%",
+              "scaleFactor": 100,
+              "helpText": "Overload threshold indicates the current value above which a notification is sent, in % of the nominal value.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "CALH1_OverVAlm",
+              "name": "Over voltage",
+              "inputType": "Scale",
+              "range": {
+                "min": 100,
+                "max": 120,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "%",
+              "scaleFactor": 100,
+              "helpText": "Over voltage indicates the voltage value above which a notification is sent, in % of the nominal value.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "CALH1_AEFAlm",
+              "name": " Earth leakage tripping threshold",
+              "inputType": "Scale",
+              "range": {
+                "min": 30,
+                "max": 100,
+                "stepValue": 5,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "%",
+              "scaleFactor": 100,
+              "helpText": "E.L. tripping threshold indicates the E.L. current value above which a notification is sent, in % of the nominal value.",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        }
+      ]
+    },
+    "deviceImageId": ""
+  }
+}

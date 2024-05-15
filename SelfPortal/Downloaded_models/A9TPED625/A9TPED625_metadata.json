@@ -1,0 +1,163 @@
+{
+  "device": {
+    "identification": [
+      {
+        "id": "0ffeb42e-a471-4889-b225-6eed7be86b73",
+        "name": "Brand",
+        "value": "Schneider Electric"
+      },
+      {
+        "id": "47821749-2218-42e4-88cd-70f3d8c4c7a6",
+        "name": "DeviceFamily",
+        "value": "Control"
+      },
+      {
+        "id": "3b87e506-56a1-4c34-9a06-41450a34a475",
+        "name": "CommercialReference",
+        "value": "A9TPED625"
+      },
+      {
+        "id": "1edca80c-a93b-45d6-a625-2f963ebaceb2",
+        "name": "CommercialRange",
+        "value": "test_dmt_A9TPED625"
+      }
+    ],
+    "configuration": {
+      "categories": [
+        {
+          "id": "73b2843e-194c-443b-8eac-69e8a4ff29b5",
+          "name": "DEVICE SETTINGS",
+          "settings": [
+            {
+              "id": "LPHD1_UserAppliName",
+              "name": "Device label",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 5,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Zigbee device label",
+              "isMandatory": true,
+              "isReadOnly": true
+            },
+            {
+              "id": "pdmShortNameID-AssetName",
+              "name": "Device name",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 4,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Zigbee device name",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "3a1562e8-ed55-4d60-a5f4-3b1293f87aa4",
+          "name": "Breaker settings",
+          "settings": [
+            {
+              "id": "pdmShortNameID-Loadname",
+              "name": "Load name",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 64,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_InstallationFromBrk",
+              "name": "Mounting position",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "hasDownstreamDataPoint",
+                  "value": "BOTTOM"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        }
+      ],
+      "alarms": [
+        {
+          "id": "7d84f157-7e3b-4599-9a88-14dac9722306",
+          "name": "Alarms",
+          "settings": [
+            {
+              "id": "CALH1_IOverloadAlm",
+              "name": "Overload threshold",
+              "inputType": "Scale",
+              "range": {
+                "min": 0,
+                "max": 100,
+                "stepValue": 5,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "%",
+              "scaleFactor": 100,
+              "helpText": "Overload threshold indicates the current value above which a notification is sent, in % of the nominal value.",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "CALH1_OverVAlm",
+              "name": "Over voltage",
+              "inputType": "Scale",
+              "range": {
+                "min": 100,
+                "max": 120,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "%",
+              "scaleFactor": 100,
+              "helpText": "Over voltage indicates the voltage value above which a notification is sent, in % of the nominal value.",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "CALH1_AEFAlm",
+              "name": " Earth leakage tripping threshold",
+              "inputType": "Scale",
+              "range": {
+                "min": 30,
+                "max": 100,
+                "stepValue": 5,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "%",
+              "scaleFactor": 100,
+              "helpText": "E.L. tripping threshold indicates the E.L. current value above which a notification is sent, in % of the nominal value.",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        }
+      ]
+    },
+    "deviceImageId": ""
+  }
+}

@@ -1,0 +1,439 @@
+{
+  "driverId": "3476ee3a-2fab-49b6-94ce-448c132a3cad",
+  "driverType": "Wireless",
+  "status": "UNDER_CONSTRUCTION",
+  "commercialRange": "nPowerTags I60 M63",
+  "deviceFamily": "Energy",
+  "otherDeviceFamily": "",
+  "noOfModels": 1,
+  "commercialModels": [
+    {
+      "commercialReference": "A9MEM1520",
+      "deviceImageId": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": "3ba29e18-b5c0-4bd5-ace9-903105fb7839",
+      "name": "Associated Breaker Settings",
+      "settings": [
+        {
+          "id": "pdmShortNameID-IsIncomer",
+          "name": "Main/incomer",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "True",
+              "value": "ON"
+            },
+            {
+              "key": "False",
+              "value": "OFF"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": true,
+          "isReadOnly": true,
+          "dependencyConfig": null
+        },
+        {
+          "id": "LPHD1_ProductCode",
+          "name": "Reference of breaker",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "Acti 9 Reflex iC60",
+              "value": "Acti 9 Reflex iC60"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "LPHD1_ARtg",
+          "name": "Rated Current",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "6",
+              "value": "6"
+            },
+            {
+              "key": "40",
+              "value": "40"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "A",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "pdmShortNameID-RatedVoltage",
+          "name": "Rated Voltage",
+          "inputType": "Scale",
+          "range": {
+            "min": 100,
+            "max": 690,
+            "stepValue": 1
+          },
+          "defaultValue": "",
+          "unitSymbol": "V",
+          "isMandatory": true,
+          "isReadOnly": false
+        },
+        {
+          "id": "pdmShortNameID-Loadname",
+          "name": "Load name",
+          "inputType": "Text",
+          "values": [
+          ],
+          "range": null,
+          "fieldValidation": {
+            "minLength": 1,
+            "maxLength": 32,
+            "regularExpression": ""
+          },
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "Name of the load applied on the single line diagram (HVAC Motor, Strip Lighting, IT closet,...).",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "pdmShortNameID-Zone",
+          "name": "Zone",
+          "inputType": "Text",
+          "values": [
+          ],
+          "range": null,
+          "fieldValidation": {
+            "minLength": 1,
+            "maxLength": 32,
+            "regularExpression": ""
+          },
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "OpTimeLoadPStrVal",
+          "name": "Load works when power greater than (W)",
+          "inputType": "Scale",
+          "values": [
+          ],
+          "range": {
+            "min": 10,
+            "max": 15000,
+            "stepValue": 1,
+            "isNoneApplicable": false
+          },
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "LPHD1_CircuitID",
+          "name": " Associated breaker label",
+          "inputType": "Text",
+          "values": [
+          ],
+          "range": null,
+          "fieldValidation": {
+            "minLength": 1,
+            "maxLength": 5,
+            "regularExpression": ""
+          },
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "LPHD1_InstallationFromBrk",
+          "name": "Mounting Position",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "hasUpstreamDataPoint",
+              "value": "TOP"
+            },
+            {
+              "key": "hasDownstreamDataPoint",
+              "value": "BOTTOM"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "Top : The sensor is mounted on the Top/Line of the protective device (circuit breaker or switch) Bottom : The sensor is mounted on the Bottom / Load of the protective device(circuit breaker or switch).",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "pdmShortNameID-TripCurve",
+          "name": "Trip curve type",
+          "inputType": "Options",
+          "values": [
+            {
+                  "key": "B",
+                  "value": "B"
+                },
+                {
+                  "key": "C",
+                  "value": "C"
+                }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        }
+      ]
+    },
+    {
+      "id": "cd8c0833-8ae4-4f43-8179-f5124c4eb73c",
+      "name": "Usage",
+      "settings": [
+        {
+          "id": "LPHD1_Usage",
+          "name": "Usage",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "Lighting",
+              "value": "Lighting"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "Select load usage type. It is used to tag and aggregate all consumptions related to an usage for energy analysis: lighting, HVAC...",
+          "isMandatory": false,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        }
+      ]
+    },
+    {
+      "id": "ad083e54-27a8-49da-bedf-a03b685e30f0",
+      "name": "Power Settings",
+      "settings": [
+        {
+          "id": "LPHD1_PowSupCfg",
+          "name": "Power Supply",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "TOP",
+              "value": "TOP"
+            },
+            {
+              "key": "BOTTOM",
+              "value": "BOTTOM"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "Top : The current flow is coming from the top / line power terminals of the protective device Bottom : The current flow is coming from the bottom / load power terminals of the protective device.",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "LPHD1_PhsRot",
+          "name": "Phase Sequence",
+          "inputType": "Options",
+          "values": [
+            {
+              "key": "A",
+              "value": "A"
+            },
+            {
+              "key": "B",
+              "value": "B"
+            },
+            {
+              "key": "C",
+              "value": "C"
+            }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "For this device, you can select the phase on which the device is wired.",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "pdmShortNameID-PowerFactorSign",
+          "name": "Power Factor Sign",
+          "inputType": "Options",
+          "values": [
+            {
+                  "key": "IEC",
+                  "value": "IEC"
+                },
+                {
+                  "key": "IEEE",
+                  "value": "IEEE"
+                }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "IEC: PF sign indicates if active power is delivered (+) or received (-). PF takes the same sign as Active power P. default value. IEEE: PF sign indicates if the installation is lagging (-) or leading(+). Commonly used in North America.",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "pdmShortNameID-SystemType",
+          "name": "System Type",
+          "inputType": "Options",
+          "values": [
+            {
+                  "key": "True",
+                  "value": "3PH4W"
+                },
+                {
+                  "key": "False",
+                  "value": "3PH3W"
+                }
+          ],
+          "range": null,
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "3PH4W:3 phases system with Neutral connected to Powertag voltage connector. 3PH3W:3 Phases system without Neutral connected to PowerTag voltage connector.",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        }
+      ]
+    },
+    {
+      "id": "55f72b02-1dab-492e-8300-83a31683d191",
+      "name": "Device Settings",
+      "settings": [
+        {
+          "id": "LPHD1_UserAppliName",
+          "name": "Device label",
+          "inputType": "Text",
+          "values": [
+          ],
+          "range": null,
+          "fieldValidation": {
+            "minLength": 1,
+            "maxLength": 5,
+            "regularExpression": ""
+          },
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        },
+        {
+          "id": "pdmShortNameID-AssetName",
+          "name": "Device name",
+          "inputType": "Text",
+          "values": [
+          ],
+          "range": null,
+          "fieldValidation": {
+            "minLength": 1,
+            "maxLength": 32,
+            "regularExpression": ""
+          },
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        }
+      ]
+    },
+    {
+      "id": "71f8eee2-cfd0-4b19-a446-d35903760dde",
+      "name": "Communication",
+      "settings": [
+        {
+          "id": "MBSL_LCCH1_Address",
+          "name": "Modbus address",
+          "inputType": "Scale",
+          "values": [
+          ],
+          "range": {
+            "min": 1,
+            "max": 247,
+            "stepValue": 1,
+            "isNoneApplicable": false
+          },
+          "fieldValidation": null,
+          "defaultValue": "",
+          "unitSymbol": "",
+          "scaleFactor": null,
+          "helpText": "",
+          "isMandatory": true,
+          "isReadOnly": false,
+          "dependencyConfig": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "device": {
+    "identification": [
+      {
+        "id": "c995f3aa-6444-42ba-b8c5-9fdd080b8569",
+        "name": "Brand",
+        "value": "Schneider Electric"
+      },
+      {
+        "id": "d4740bdf-33ed-4bc4-a669-4d3629e12090",
+        "name": "DeviceFamily",
+        "value": "Energy"
+      },
+      {
+        "id": "459bb92b-73ba-4981-987c-4a5c50a73e50",
+        "name": "CommercialReference",
+        "value": "A9MEM1543"
+      },
+      {
+        "id": "ca8fb509-bae0-4adf-b7de-c8463940c07f",
+        "name": "CommercialRange",
+        "value": "3p PowerTag A9MEM1543"
+      }
+    ],
+    "configuration": {
+      "categories": [
+        {
+          "id": "ccb78395-3c0f-4cd0-96c5-979185c6911e",
+          "name": "Associated breaker settings",
+          "settings": [
+            {
+              "id": "pdmShortNameID-IsIncomer",
+              "name": "Main/Incomer",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "True",
+                  "value": "ON"
+                },
+                {
+                  "key": "False",
+                  "value": "OFF"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_ProductCode",
+              "name": "Reference of breaker",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "Acti 9 Reflex iC60",
+                  "value": "Acti 9 Reflex iC60"
+                },
+                {
+                  "key": "Acti 9 iKQE RCBO",
+                  "value": "Acti 9 iKQE RCBO"
+                },
+                {
+                  "key": "Multi 9 C60",
+                  "value": "Multi 9 C60"
+                },
+                {
+                  "key": "Multi 9 ID",
+                  "value": "Multi 9 ID"
+                },
+                {
+                  "key": "Multi 9 C32N",
+                  "value": "Multi 9 C32N"
+                },
+                {
+                  "key": "Multi 9 C65",
+                  "value": "Multi 9 C65"
+                },
+                {
+                  "key": "Acti 9 iID",
+                  "value": "Acti 9 iID"
+                },
+                {
+                  "key": "Acti 9 iID K",
+                  "value": "Acti 9 iID K"
+                },
+                {
+                  "key": "Acti 9 iK60",
+                  "value": "Acti 9 iK60"
+                },
+                {
+                  "key": "Acti 9 iKQ",
+                  "value": "Acti 9 iKQ"
+                },
+                {
+                  "key": "Acti 9 K60",
+                  "value": "Acti 9 K60"
+                },
+                {
+                  "key": "Acti 9 iC65",
+                  "value": "Acti 9 iC65"
+                },
+                {
+                  "key": "Acti 9 DT60",
+                  "value": "Acti 9 DT60"
+                },
+                {
+                  "key": "Acti 9 iC60",
+                  "value": "Acti 9 iC60"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_ARtg",
+              "name": "Rated current",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "6",
+                  "value": "6"
+                },
+                {
+                  "key": "10",
+                  "value": "10"
+                },
+                {
+                  "key": "13",
+                  "value": "13"
+                },
+                {
+                  "key": "20",
+                  "value": "20"
+                },
+                {
+                  "key": "25",
+                  "value": "25"
+                },
+                {
+                  "key": "32",
+                  "value": "32"
+                },
+                {
+                  "key": "40",
+                  "value": "40"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "A",
+              "helpText": "Add the breaker rating from the list to calculate the percentage of load of the circuit. You can set this value between 1 and 63A.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-Loadname",
+              "name": "Load name",
+              "inputType": "Text",
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 65536,
+                "regularExpression": "string"
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Name of the load applied on the single line diagram (HVAC Motor, Strip Lighting, IT closet,...).",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-Zone",
+              "name": "Zone",
+              "inputType": "Text",
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Name a zone to subdivide a building. It is used to tag and aggregate all consumptions which are related to a zone in the building: floor 1; floor 2...",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "OpTimeLoadPStrVal",
+              "name": "Load works when power greater than (W)",
+              "inputType": "Scale",
+              "range": {
+                "min": 10,
+                "max": 15000,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "The load operating time counter increments only when the power is greater or equal to the set value. You can set the value between 10W and 15000W.",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_CircuitID",
+              "name": " Associated breaker label",
+              "inputType": "Text",
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": false,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_InstallationFromBrk",
+              "name": "Mounting Position",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "hasUpstreamDataPoint",
+                  "value": "TOP"
+                },
+                {
+                  "key": "hasDownstreamDataPoint",
+                  "value": "BOTTOM"
+                }
+              ],
+              "defaultValue": "BOTTOM",
+              "unitSymbol": "",
+              "helpText": "Top : The sensor is mounted on the Top/Line of the protective device (circuit breaker or switch) Bottom : The sensor is mounted on the Bottom / Load of the protective device(circuit breaker or switch).",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "47a9f17d-3c67-45a6-b716-b0967a27236b",
+          "name": "Usage",
+          "settings": [
+            {
+              "id": "LPHD1_Usage",
+              "name": "Usage",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "Lighting",
+                  "value": "Lighting"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Select load usage type. It is used to tag and aggregate all consumptions related to an usage for energy analysis: lighting, HVAC...",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "53fe4527-8098-4e6d-9201-e8d9549181ed",
+          "name": "Power Settings",
+          "settings": [
+            {
+              "id": "LPHD1_PowSupCfg",
+              "name": "Power Supply",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "TOP",
+                  "value": "TOP"
+                },
+                {
+                  "key": "BOTTOM",
+                  "value": "BOTTOM"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Top : The current flow is coming from the top / line power terminals of the protective device Bottom : The current flow is coming from the bottom / load power terminals of the protective device.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "LPHD1_PhsRot",
+              "name": "Phase Sequence",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "A",
+                  "value": "A"
+                },
+                {
+                  "key": "B",
+                  "value": "B"
+                },
+                {
+                  "key": "C",
+                  "value": "C"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "For this device, you can select the phase on which the device is wired.",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "c6258902-9b34-4a77-926c-94838d2c9ee6",
+          "name": "Device Settings",
+          "settings": [
+            {
+              "id": "LPHD1_UserAppliName",
+              "name": "Device label",
+              "inputType": "Text",
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Alphanumerical value assigned to the device on the single line diagram.",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "28a75c80-7083-4b45-b8cc-aa0e3927231d",
+          "name": "Communication",
+          "settings": [
+            {
+              "id": "MBSL_LCCH1_Address",
+              "name": " Modbus address",
+              "inputType": "Scale",
+              "range": {
+                "min": 1,
+                "max": 247,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 65535,
+                "regularExpression": "string"
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        }
+      ]
+    },
+    "deviceImageId": ""
+  }
+}

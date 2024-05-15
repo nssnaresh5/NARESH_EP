@@ -1,0 +1,1846 @@
+{
+  "serviceMapping": {
+    "commonDeviceAttributes": {
+      "id": "6b2474c4-e48d-45d7-b0b5-5410bad6cacc",
+      "globalVariables": [
+        "deviceId",
+        "electricalDatapoint",
+        "modbusNodeId"
+      ],
+      "services": [
+        {
+          "globalVariable": "deviceId",
+          "reqType": "GET",
+          "serviceUrl": "devices/<deviceId>",
+          "rank": 1,
+          "params": [
+            {
+              "paramName": "deviceId",
+              "paramsType": "FromClientApp",
+              "refType": "None",
+              "rank": 0,
+              "path": "",
+              "conditions": []
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "deviceId"
+          }
+        },
+        {
+          "globalVariable": "electricalDatapoint",
+          "reqType": "GET",
+          "serviceUrl": "data-points/<dataPointId>",
+          "rank": 2,
+          "params": [
+            {
+              "paramName": "dataPointId",
+              "paramsType": "PathRef",
+              "refType": "ListWithConditionOnResponse",
+              "rank": 1,
+              "path": "sensor._links.hasDataPoints._id",
+              "conditions": [
+                {
+                  "propertyName": "type",
+                  "operator": "Equals",
+                  "value": "ELECTRICAL"
+                }
+              ]
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "electricalDatapoint",
+            "type": "ELECTRICAL"
+          }
+        },
+        {
+          "globalVariable": "modbusNodeId",
+          "reqType": "GET",
+          "serviceUrl": "communication-nodes/<node_Id>",
+          "rank": 3,
+          "params": [
+            {
+              "paramName": "node_Id",
+              "paramsType": "PathRef",
+              "refType": "ListWithConditionOnResponse",
+              "rank": 1,
+              "path": "communication._links.hasNodes._id",
+              "conditions": [
+                {
+                  "propertyName": "port.type",
+                  "operator": "Equals",
+                  "value": "MODBUS_VIRTUAL"
+                }
+              ]
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "modbusNodeId",
+            "port": {
+              "type": "ZIGBEE_PRO"
+            }
+          }
+        }
+      ]
+    },
+    "categories": [
+      {
+        "id": "942c10e1-b56a-4c0b-a394-95e7d671ab8c",
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices?hasFacet=ELECTRICAL&hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "devices": [
+                  {
+                    "_id": "someIdLocalToServer",
+                    "commercialReference": "LV43v09",
+                    "address": "slaveAddress | IEEEAddress | rfid"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "devices._id",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "Incomer #1",
+                "label": "LPHD1_CircuitID",
+                "healthState": "NOMINAL",
+                "quality": "GOOD",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "label": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "communication": {
+                  "pdmIdentifier": "15144",
+                  "vendorUrl": "https://se.com",
+                  "isRoot": "false",
+                  "isOn": "true",
+                  "healthState": "NOMINAL",
+                  "commissioningHint": "Electropole - Main Switchboard",
+                  "identifyTimer": "0",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "commissioningHint": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "identifyTimer": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    },
+                    "hasNodes": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "hasUpstreamNetworking": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasUpstreamNetworkingSettingGroup": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDateTime": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "identification": {
+                  "brand": "Schneider Electric",
+                  "commercialReference": "LV43v09",
+                  "serialNumber": "abcdef-12345-ghij",
+                  "range": "LPHD1_ProductCode",
+                  "model": "6.3.e",
+                  "family": "circuit-breaker",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "brand": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "commercialReference": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "serialNumber": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "range": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "model": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "family": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "sensor": {
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasDataPoints": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ]
+                  }
+                },
+                "firmware": {
+                  "version": "2.2.0",
+                  "updateProtocol": "IP",
+                  "mode": "BOOT",
+                  "quality": "GOOD"
+                },
+                "hardware": {
+                  "version": "1.2.1",
+                  "type": "Engineering Prototype",
+                  "quality": "GOOD"
+                },
+                "backup": {
+                  "name": "Backup V1.2 of 2021-W18",
+                  "createdAt": "2017-08-18T10:30:40+00:00",
+                  "restoredAt": "2017-08-18T10:30:40+00:00",
+                  "quality": "GOOD"
+                },
+                "electrical": {
+                  "type": "BREAKER_WITH_LOAD",
+                  "isIncomer": "pdmShortNameID-IsIncomer",
+                  "ratedCurrent": "LPHD1_ARtg",
+                  "ratedVoltage": "230",
+                  "tripCurveType": "B",
+                  "quality": "GOOD",
+                  "_links": {
+                    "LPHD1_InstallationFromBrk": {
+                      "_id": "datapointID"
+                    }
+                  },
+                  "load": {
+                    "name": "pdmShortNameID-Loadname",
+                    "zone": "pdmShortNameID-Zone",
+                    "worksWhenPowerGreaterThan": "OpTimeLoadPStrVal",
+                    "_links": {
+                      "hasMetadata": {
+                        "name": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "zone": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "worksWhenPowerGreaterThan": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "panel": {
+                  "name": "Panel #1",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "name": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "scheduling": {
+                  "state": "AUTO",
+                  "digitalInputMode": "MODE_PERMANENT_ON",
+                  "quality": "GOOD",
+                  "healthState": "NOMINAL",
+                  "_links": {
+                    "hasSchedules": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "digitalInput": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "controls": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "state": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "digitalInputMode": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "location": {
+                  "latitude": "-17.660199",
+                  "longitude": "-149.597837",
+                  "_links": {
+                    "hasMetadata": {
+                      "latitude": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "longitude": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices?hasFacet=ELECTRICAL&hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_timeToLive": "5",
+                "devices": [
+                  {
+                    "_id": "someIdLocalToServer",
+                    "commercialReference": "LV43v09",
+                    "address": "slaveAddress | IEEEAddress | rfid"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "POST",
+              "serviceUrl": "devices",
+              "rank": 2,
+              "params": [],
+              "requestBody": {
+                "label": "LPHD1_CircuitID",
+                "identification": {
+                  "range": "LPHD1_ProductCode"
+                },
+                "electrical": {
+                  "isIncomer": "pdmShortNameID-IsIncomer",
+                  "ratedCurrent": "LPHD1_ARtg",
+                  "load": {
+                    "name": "pdmShortNameID-Loadname",
+                    "zone": "pdmShortNameID-Zone",
+                    "worksWhenPowerGreaterThan": "OpTimeLoadPStrVal"
+                  },
+                  "_links": {
+                    "LPHD1_InstallationFromBrk": {
+                      "_id": "datapointID"
+                    }
+                  }
+                }
+              },
+              "preConditions": [
+                {
+                  "paramName": "",
+                  "paramsType": "None",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "",
+                  "conditions": [
+                    {
+                      "propertyName": "devices._id",
+                      "operator": "Equals",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "devices._id",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "label": "LPHD1_CircuitID",
+                "identification": {
+                  "range": "LPHD1_ProductCode"
+                },
+                "electrical": {
+                  "isIncomer": "pdmShortNameID-IsIncomer",
+                  "ratedCurrent": "LPHD1_ARtg",
+                  "load": {
+                    "name": "pdmShortNameID-Loadname",
+                    "zone": "pdmShortNameID-Zone",
+                    "worksWhenPowerGreaterThan": "OpTimeLoadPStrVal"
+                  },
+                  "_links": {
+                    "LPHD1_InstallationFromBrk": {
+                      "_id": "datapointID"
+                    }
+                  }
+                }
+              },
+              "preConditions": [
+                {
+                  "paramName": "",
+                  "paramsType": "None",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "",
+                  "conditions": [
+                    {
+                      "propertyName": "devices._id",
+                      "operator": "NotEquals",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "f6cf71ca-1ec5-4df0-b254-7c2aed5f5814",
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "data-points/<dataPointId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "dataPointId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "type": "ELECTRICAL",
+                "electrical": {
+                  "slot1Phase": "+A",
+                  "slot2Phase": "+A",
+                  "slot3Phase": "+A",
+                  "slot4Phase": "+A",
+                  "neutralVT": true,
+                  "powerFactorSign": "IEC",
+                  "quality": "GOOD",
+                  "operationCounter": "5",
+                  "_links": {
+                    "hasMetadata": {
+                      "slot1Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot2Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot3Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "slot4Phase": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "neutralVT": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "powerFactorSign": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "_links": {
+                  "hasMeasurements": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasAlarms": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasEvents": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "hasControls": [
+                    {
+                      "_id": "someIdLocalToServer",
+                      "pdmShortNameId": "Whr"
+                    }
+                  ],
+                  "belongsToDevice": {
+                    "_id": "someIdLocalToServer"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "data-points/<dataPointId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "dataPointId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "electrical": {
+                  "slot1Phase": "+A",
+                  "slot2Phase": "+A",
+                  "slot3Phase": "+A"
+                }
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "128c1575-67ac-46a7-8fc2-aab776542c3a",
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/deviceId",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "Incomer #1",
+                "label": "LPHD1_UserAppliName",
+                "healthState": "NOMINAL",
+                "quality": "GOOD",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "label": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "communication": {
+                  "pdmIdentifier": "15144",
+                  "vendorUrl": "https://se.com",
+                  "isRoot": "false",
+                  "isOn": "true",
+                  "healthState": "NOMINAL",
+                  "commissioningHint": "Electropole - Main Switchboard",
+                  "identifyTimer": "0",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "commissioningHint": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "identifyTimer": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    },
+                    "hasNodes": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "hasUpstreamNetworking": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasUpstreamNetworkingSettingGroup": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDateTime": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "identification": {
+                  "brand": "Schneider Electric",
+                  "commercialReference": "LV43v09",
+                  "serialNumber": "abcdef-12345-ghij",
+                  "range": "compact NSX",
+                  "model": "6.3.e",
+                  "family": "circuit-breaker",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "brand": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "commercialReference": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "serialNumber": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "range": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "model": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "family": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "sensor": {
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasDataPoints": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ]
+                  }
+                },
+                "firmware": {
+                  "version": "2.2.0",
+                  "updateProtocol": "IP",
+                  "mode": "BOOT",
+                  "quality": "GOOD"
+                },
+                "hardware": {
+                  "version": "1.2.1",
+                  "type": "Engineering Prototype",
+                  "quality": "GOOD"
+                },
+                "backup": {
+                  "name": "Backup V1.2 of 2021-W18",
+                  "createdAt": "2017-08-18T10:30:40+00:00",
+                  "restoredAt": "2017-08-18T10:30:40+00:00",
+                  "quality": "GOOD"
+                },
+                "electrical": {
+                  "type": "BREAKER_WITH_LOAD",
+                  "isIncomer": "false",
+                  "ratedCurrent": "32",
+                  "ratedVoltage": "230",
+                  "tripCurveType": "B",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasUpstreamDataPoint": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDownstreamDataPoint": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "type": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "isIncomer": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "ratedCurrent": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "ratedVoltage": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "tripCurveType": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  },
+                  "load": {
+                    "name": "Lights of the main hall",
+                    "zone": "Main hall",
+                    "worksWhenPowerGreaterThan": "100",
+                    "_links": {
+                      "hasMetadata": {
+                        "name": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "zone": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "worksWhenPowerGreaterThan": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "panel": {
+                  "name": "Panel #1",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "name": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "scheduling": {
+                  "state": "AUTO",
+                  "digitalInputMode": "MODE_PERMANENT_ON",
+                  "quality": "GOOD",
+                  "healthState": "NOMINAL",
+                  "_links": {
+                    "hasSchedules": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "digitalInput": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "controls": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "state": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "digitalInputMode": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "location": {
+                  "latitude": "-17.660199",
+                  "longitude": "-149.597837",
+                  "_links": {
+                    "hasMetadata": {
+                      "latitude": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "longitude": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/deviceId",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "label": "LPHD1_UserAppliName"
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "89212dd3-4a33-41c0-80b9-ed2759729f74",
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "usages?hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "usages": [
+                  {
+                    "_id": "LPHD1_Usage",
+                    "name": "Lighting"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "usages?hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/electricalDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_timeToLive": "5",
+                "usages": [
+                  {
+                    "_id": "LPHD1_Usage",
+                    "name": "Lighting"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "usages/<usageId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "usageId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "usages._id",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "Lighting",
+                "type": "LightingUsageId",
+                "rank": "1",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  },
+                  "hasDataPoints": [
+                    {
+                      "_id": "someIdLocalToServer"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "usages/<usageId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "usageId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 2,
+                  "path": "_id",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {},
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "5c854f1e-8a42-4186-aa54-b73e4c633831",
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "communication-nodes/<nodeId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "nodeId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/modbusNodeId",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "_id": "someIdLocalToServer",
+                "port": {
+                  "type": "MODBUS_SL",
+                  "name": "Port 1",
+                  "rank": "1",
+                  "isMaster": "true",
+                  "connectionStatus": "JOINING",
+                  "signalQuality": "EXCELLENT",
+                  "address": "MBSL_LCCH1_Address",
+                  "quality": "GOOD",
+                  "_links": {
+                    "belongsToDevice": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "isPartOfNetwork": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "transmits": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "derives": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "rank": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "address": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  },
+                  "modbusSerialLine": {
+                    "timeout": "1000",
+                    "isSerialLinePolarized": "true",
+                    "hasTerminatorResistance": "true",
+                    "_links": {
+                      "hasMetadata": {
+                        "timeout": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "isSerialLinePolarized": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "hasTerminatorResistance": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  },
+                  "modbusTcp": {
+                    "connectionTimeout": "1000",
+                    "messageTimeout": "1000",
+                    "_links": {
+                      "hasMetadata": {
+                        "connectionTimeout": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "messageTimeout": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  },
+                  "zigbee": {
+                    "lqi": "2",
+                    "rssi": "3",
+                    "packetErrorRate": "15"
+                  },
+                  "digitalIO": {
+                    "invert": true,
+                    "_links": {
+                      "hasMetadata": {
+                        "invert": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "communication-nodes/<nodeId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "nodeId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/modbusNodeId",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "port": {
+                  "address": "MBSL_LCCH1_Address"
+                }
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "advancedSettingsConfig": {
+    "read": [
+      {
+        "id": "f6cf71ca-1ec5-4df0-b254-7c2aed5f5814",
+        "advancedSettings": [
+          {
+            "pdmShortNameId": "LPHD1_PowSupCfg",
+            "dependentSettings": [
+              "LPHD1_InstallationFromBrk"
+            ],
+            "dependentResponseValues": [
+              {
+                "value": "slot2Phase",
+                "rank": 1,
+                "path": "electrical.slot2Phase"
+              }
+            ],
+            "possibleDerivedValues": [
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot2Phase": "+A",
+                "value": "BOTTOM"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot2Phase": "-A",
+                "value": "TOP"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot2Phase": "+B",
+                "value": "BOTTOM"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot2Phase": "-B",
+                "value": "TOP"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot2Phase": "+C",
+                "value": "BOTTOM"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot2Phase": "-C",
+                "value": "TOP"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot2Phase": "+A",
+                "value": "TOP"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot2Phase": "-A",
+                "value": "BOTTOM"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot2Phase": "+B",
+                "value": "TOP"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot2Phase": "-B",
+                "value": "BOTTOM"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot2Phase": "+C",
+                "value": "TOP"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot2Phase": "-C",
+                "value": "BOTTOM"
+              }
+            ]
+          },
+          {
+            "pdmShortNameId": "LPHD1_PhsRot",
+            "dependentSettings": [
+              "LPHD1_InstallationFromBrk"
+            ],
+            "dependentResponseValues": [
+              {
+                "value": "slot1Phase",
+                "rank": 1,
+                "path": "electrical.slot1Phase"
+              },
+              {
+                "value": "slot2Phase",
+                "rank": 1,
+                "path": "electrical.slot2Phase"
+              },
+              {
+                "value": "slot3Phase",
+                "rank": 1,
+                "path": "electrical.slot3Phase"
+              }
+            ],
+            "possibleDerivedValues": [
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "+A",
+                "slot2Phase": "+B",
+                "slot3Phase": "+C",
+                "value": "C-B-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "-A",
+                "slot2Phase": "-B",
+                "slot3Phase": "-C",
+                "value": "C-B-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "+A",
+                "slot2Phase": "+C",
+                "slot3Phase": "+B",
+                "value": "B-C-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "-A",
+                "slot2Phase": "-C",
+                "slot3Phase": "-B",
+                "value": "B-C-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "+B",
+                "slot2Phase": "+A",
+                "slot3Phase": "+C",
+                "value": "C-A-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "-B",
+                "slot2Phase": "-A",
+                "slot3Phase": "-C",
+                "value": "C-A-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "+B",
+                "slot2Phase": "+C",
+                "slot3Phase": "+A",
+                "value": "A-C-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "-B",
+                "slot2Phase": "-C",
+                "slot3Phase": "-A",
+                "value": "A-C-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "+C",
+                "slot2Phase": "+A",
+                "slot3Phase": "+B",
+                "value": "B-A-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "-C",
+                "slot2Phase": "-A",
+                "slot3Phase": "-B",
+                "value": "B-A-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "+C",
+                "slot2Phase": "+B",
+                "slot3Phase": "+A",
+                "value": "A-B-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "slot1Phase": "-C",
+                "slot2Phase": "-B",
+                "slot3Phase": "-A",
+                "value": "A-B-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "+A",
+                "slot2Phase": "+B",
+                "slot3Phase": "+C",
+                "value": "A-B-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "-A",
+                "slot2Phase": "-B",
+                "slot3Phase": "-C",
+                "value": "A-B-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "+A",
+                "slot2Phase": "+C",
+                "slot3Phase": "+B",
+                "value": "A-C-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "-A",
+                "slot2Phase": "-C",
+                "slot3Phase": "-B",
+                "value": "A-C-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "+B",
+                "slot2Phase": "+A",
+                "slot3Phase": "+C",
+                "value": "B-A-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "-B",
+                "slot2Phase": "-A",
+                "slot3Phase": "-C",
+                "value": "B-A-C"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "+B",
+                "slot2Phase": "+C",
+                "slot3Phase": "+A",
+                "value": "B-C-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "-B",
+                "slot2Phase": "-C",
+                "slot3Phase": "-A",
+                "value": "B-C-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "+C",
+                "slot2Phase": "+A",
+                "slot3Phase": "+B",
+                "value": "C-A-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "-C",
+                "slot2Phase": "-A",
+                "slot3Phase": "-B",
+                "value": "C-A-B"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "+C",
+                "slot2Phase": "+B",
+                "slot3Phase": "+A",
+                "value": "C-B-A"
+              },
+              {
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "slot1Phase": "-C",
+                "slot2Phase": "-B",
+                "slot3Phase": "-A",
+                "value": "C-B-A"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "write": [
+      {
+        "id": "f6cf71ca-1ec5-4df0-b254-7c2aed5f5814",
+        "advancedSettings": [
+          {
+            "attribute": {
+              "value": "slot1Phase",
+              "rank": 1,
+              "path": "electrical.slot1Phase"
+            },
+            "dependentSettings": [
+              "LPHD1_InstallationFromBrk",
+              "LPHD1_PowSupCfg",
+              "LPHD1_PhsRot"
+            ],
+            "dependentResponseValues": [],
+            "possibleDerivedValues": [
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              }
+            ]
+          },
+          {
+            "attribute": {
+              "value": "slot2Phase",
+              "rank": 1,
+              "path": "electrical.slot2Phase"
+            },
+            "dependentSettings": [
+              "LPHD1_InstallationFromBrk",
+              "LPHD1_PowSupCfg",
+              "LPHD1_PhsRot"
+            ],
+            "dependentResponseValues": [],
+            "possibleDerivedValues": [
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              }
+            ]
+          },
+          {
+            "attribute": {
+              "value": "slot3Phase",
+              "rank": 1,
+              "path": "electrical.slot3Phase"
+            },
+            "dependentSettings": [
+              "LPHD1_InstallationFromBrk",
+              "LPHD1_PowSupCfg",
+              "LPHD1_PhsRot"
+            ],
+            "dependentResponseValues": [],
+            "possibleDerivedValues": [
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasUpstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "A-B-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "A-C-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+C"
+              },
+              {
+                "LPHD1_PhsRot": "B-A-C",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-C"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "B-C-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+B"
+              },
+              {
+                "LPHD1_PhsRot": "C-A-B",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-B"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "TOP",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "+A"
+              },
+              {
+                "LPHD1_PhsRot": "C-B-A",
+                "LPHD1_PowSupCfg": "BOTTOM",
+                "LPHD1_InstallationFromBrk": "hasDownstreamDataPoint",
+                "value": "-A"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

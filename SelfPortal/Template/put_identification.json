@@ -1,0 +1,18 @@
+{
+  "driverId": "",
+  "driverType": "Wireless",
+  "commercialRange": "ABC",
+  "noOfModels": 2,
+  "deviceFamily": "Energy",
+  "otherDeviceFamily": "",
+  "commercialModels": [
+    {
+      "commercialReference": "123",
+      "deviceImageId": ""
+    },
+    {
+      "commercialReference": "456",
+      "deviceImageId": ""
+    }
+  ]
+}

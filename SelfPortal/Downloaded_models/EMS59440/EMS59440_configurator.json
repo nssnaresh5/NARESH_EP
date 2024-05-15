@@ -1,0 +1,749 @@
+{
+  "serviceMapping": {
+    "commonDeviceAttributes": {
+      "id": "9fb69194-783a-4d0a-9e88-c03a42938f8e",
+      "globalVariables": [
+        "deviceId",
+        "modbusNodeId",
+        "ambientDatapoint"
+      ],
+      "services": [
+        {
+          "globalVariable": "deviceId",
+          "reqType": "GET",
+          "serviceUrl": "devices/<deviceId>",
+          "rank": 1,
+          "params": [
+            {
+              "paramName": "deviceId",
+              "paramsType": "FromClientApp",
+              "refType": "None",
+              "rank": 0,
+              "path": "",
+              "conditions": []
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "deviceId"
+          }
+        },
+        {
+          "globalVariable": "modbusNodeId",
+          "reqType": "GET",
+          "serviceUrl": "communication-nodes/<node_Id>",
+          "rank": 3,
+          "params": [
+            {
+              "paramName": "node_Id",
+              "paramsType": "PathRef",
+              "refType": "ListWithConditionOnResponse",
+              "rank": 1,
+              "path": "communication._links.hasNodes._id",
+              "conditions": [
+                {
+                  "propertyName": "port.type",
+                  "operator": "Equals",
+                  "value": "MODBUS_VIRTUAL"
+                }
+              ]
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "modbusNodeId",
+            "port": {
+              "type": "ZIGBEE_PRO"
+            }
+          }
+        },
+        {
+          "globalVariable": "ambientDatapoint",
+          "reqType": "GET",
+          "serviceUrl": "data-points/<dataPointId>",
+          "rank": 5,
+          "params": [
+            {
+              "paramName": "dataPointId",
+              "paramsType": "PathRef",
+              "refType": "ListWithConditionOnResponse",
+              "rank": 1,
+              "path": "sensor._links.hasDataPoints._id",
+              "conditions": [
+                {
+                  "propertyName": "type",
+                  "operator": "Equals",
+                  "value": "AMBIENT"
+                }
+              ]
+            }
+          ],
+          "preConditions": [],
+          "response": {
+            "_id": "ambientDatapoint",
+            "type": "AMBIENT"
+          }
+        }
+      ]
+    },
+    "categories": [
+      {
+        "id": "9f78bfac-0c67-4a94-8138-f3cadbc225bb",
+        "pdmShortNameIds": [
+          "LPHD1_UserAppliName"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/deviceId",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "name": "Incomer #1",
+                "label": "LPHD1_UserAppliName",
+                "healthState": "NOMINAL",
+                "quality": "GOOD",
+                "_links": {
+                  "hasMetadata": {
+                    "name": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "label": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "communication": {
+                  "pdmIdentifier": "15144",
+                  "vendorUrl": "https://se.com",
+                  "isRoot": "false",
+                  "isOn": "true",
+                  "healthState": "NOMINAL",
+                  "commissioningHint": "Electropole - Main Switchboard",
+                  "identifyTimer": "0",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "commissioningHint": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "identifyTimer": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    },
+                    "hasNodes": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "hasUpstreamNetworking": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasUpstreamNetworkingSettingGroup": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDateTime": {
+                      "_id": "someIdLocalToServer"
+                    }
+                  }
+                },
+                "identification": {
+                  "brand": "Schneider Electric",
+                  "commercialReference": "LV43v09",
+                  "serialNumber": "abcdef-12345-ghij",
+                  "range": "compact NSX",
+                  "model": "6.3.e",
+                  "family": "circuit-breaker",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "brand": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "commercialReference": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "serialNumber": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "range": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "model": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "family": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "sensor": {
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasDataPoints": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ]
+                  }
+                },
+                "firmware": {
+                  "version": "2.2.0",
+                  "updateProtocol": "IP",
+                  "mode": "BOOT",
+                  "quality": "GOOD"
+                },
+                "hardware": {
+                  "version": "1.2.1",
+                  "type": "Engineering Prototype",
+                  "quality": "GOOD"
+                },
+                "backup": {
+                  "name": "Backup V1.2 of 2021-W18",
+                  "createdAt": "2017-08-18T16:00:40+05:30",
+                  "restoredAt": "2017-08-18T16:00:40+05:30",
+                  "quality": "GOOD"
+                },
+                "electrical": {
+                  "type": "BREAKER_WITH_LOAD",
+                  "isIncomer": "false",
+                  "ratedCurrent": "32",
+                  "ratedVoltage": "230",
+                  "tripCurveType": "B",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasUpstreamDataPoint": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasDownstreamDataPoint": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "type": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "isIncomer": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "ratedCurrent": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "ratedVoltage": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "tripCurveType": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  },
+                  "load": {
+                    "name": "Lights of the main hall",
+                    "zone": "Main hall",
+                    "worksWhenPowerGreaterThan": "100",
+                    "_links": {
+                      "hasMetadata": {
+                        "name": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "zone": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "worksWhenPowerGreaterThan": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                },
+                "panel": {
+                  "name": "Panel #1",
+                  "quality": "GOOD",
+                  "_links": {
+                    "hasMetadata": {
+                      "name": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "scheduling": {
+                  "state": "AUTO",
+                  "digitalInputMode": "MODE_PERMANENT_ON",
+                  "quality": "GOOD",
+                  "healthState": "NOMINAL",
+                  "_links": {
+                    "hasSchedules": [
+                      {
+                        "_id": "someIdLocalToServer"
+                      }
+                    ],
+                    "digitalInput": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "controls": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "state": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "digitalInputMode": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                },
+                "location": {
+                  "latitude": "-17.660199",
+                  "longitude": "-149.597837",
+                  "_links": {
+                    "hasMetadata": {
+                      "latitude": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "longitude": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "devices/<deviceId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "deviceId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/deviceId",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "label": "LPHD1_UserAppliName"
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      },
+      {
+        "id": "e5a87fa0-7bbc-40c9-9e1a-ec1f11299220",
+        "pdmShortNameIds": [
+          "pdmShortNameID-Equipment",
+          "pdmShortNameID-Sensor",
+          "pdmShortNameID-MeasuredPoint",
+          "pdmShortNameID-CubicleId",
+          "pdmShortNameID-CubicleType",
+          "pdmShortNameID-CircuitBreakerID"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "positions?hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/ambientDatapoint",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "positions": [
+                  {
+                    "_id": "someIdLocalToServer"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "GET",
+              "serviceUrl": "positions/<positionId>",
+              "rank": 2,
+              "params": [
+                {
+                  "paramName": "positionId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "positions._id",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_id": "someIdLocalToServer",
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "settings": [
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_sensor",
+                    "value": "pdmShortNameID-Sensor"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_cubicle_type",
+                    "value": "pdmShortNameID-CubicleType"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_cubicle_id",
+                    "value": "pdmShortNameID-CubicleId"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_equipment",
+                    "value": "pdmShortNameID-Equipment"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_measured_point",
+                    "value": "pdmShortNameID-MeasuredPoint"
+                  }
+                ],
+                "_links": {
+                  "hasDataPoints": [
+                    {
+                      "_id": "someIdLocalToServer"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "positions?hasDataPoint=<hasDataPoint>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "hasDataPoint",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/ambientDatapoint",
+                  "conditions": []
+                }
+              ],
+              "preConditions": [],
+              "response": {
+                "_timeToLive": "5",
+                "positions": [
+                  {
+                    "_id": "someIdLocalToServer"
+                  }
+                ]
+              }
+            },
+            {
+              "reqType": "POST",
+              "serviceUrl": "positions",
+              "rank": 2,
+              "params": [],
+              "requestBody": {
+                "settings": [
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_sensor",
+                    "value": "pdmShortNameID-Sensor"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_cubicle_type",
+                    "value": "pdmShortNameID-CubicleType"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_cubicle_id",
+                    "value": "pdmShortNameID-CubicleId"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_equipment",
+                    "value": "pdmShortNameID-Equipment"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_measured_point",
+                    "value": "pdmShortNameID-MeasuredPoint"
+                  }
+                ],
+                "_links": {
+                  "hasDataPoints": [
+                    {
+                      "_id": "datapointID"
+                    }
+                  ]
+                }
+              },
+              "preConditions": [
+                {
+                  "paramName": "",
+                  "paramsType": "None",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "",
+                  "conditions": [
+                    {
+                      "propertyName": "positions._id",
+                      "operator": "Equals",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "reqType": "PUT",
+              "serviceUrl": "positions/<positionId>",
+              "rank": 3,
+              "params": [
+                {
+                  "paramName": "positionId",
+                  "paramsType": "PathRef",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "positions._id",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "settings": [
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_sensor",
+                    "value": "pdmShortNameID-Sensor"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_cubicle_type",
+                    "value": "pdmShortNameID-CubicleType"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_cubicle_id",
+                    "value": "pdmShortNameID-CubicleId"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_equipment",
+                    "value": "pdmShortNameID-Equipment"
+                  },
+                  {
+                    "key": "urn:edm-se:em:core:pr:position_measured_point",
+                    "value": "pdmShortNameID-MeasuredPoint"
+                  }
+                ]
+              },
+              "preConditions": [
+                {
+                  "paramName": "",
+                  "paramsType": "None",
+                  "refType": "PreviousResponse",
+                  "rank": 1,
+                  "path": "",
+                  "conditions": [
+                    {
+                      "propertyName": "positions._id",
+                      "operator": "NotEquals",
+                      "value": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "id": "c76da013-7d77-44e0-a446-66c4d368e4df",
+        "pdmShortNameIds": [
+          "MBSL_LCCH1_Address"
+        ],
+        "read": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "GET",
+              "serviceUrl": "communication-nodes/<nodeId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "nodeId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/modbusNodeId",
+                  "conditions": []
+                }
+              ],
+              "response": {
+                "_timeToLive": "5",
+                "_linksTimeToLive": "15",
+                "_id": "someIdLocalToServer",
+                "port": {
+                  "type": "MODBUS_SL",
+                  "name": "Port 1",
+                  "rank": "1",
+                  "isMaster": "true",
+                  "connectionStatus": "JOINING",
+                  "signalQuality": "EXCELLENT",
+                  "address": "MBSL_LCCH1_Address",
+                  "quality": "GOOD",
+                  "_links": {
+                    "belongsToDevice": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "isPartOfNetwork": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "transmits": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "derives": {
+                      "_id": "someIdLocalToServer"
+                    },
+                    "hasMetadata": {
+                      "rank": {
+                        "_id": "someIdLocalToServer"
+                      },
+                      "address": {
+                        "_id": "someIdLocalToServer"
+                      }
+                    }
+                  },
+                  "modbusSerialLine": {
+                    "timeout": "1000",
+                    "isSerialLinePolarized": "true",
+                    "hasTerminatorResistance": "true",
+                    "_links": {
+                      "hasMetadata": {
+                        "timeout": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "isSerialLinePolarized": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "hasTerminatorResistance": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  },
+                  "modbusTcp": {
+                    "connectionTimeout": "1000",
+                    "messageTimeout": "1000",
+                    "_links": {
+                      "hasMetadata": {
+                        "connectionTimeout": {
+                          "_id": "someIdLocalToServer"
+                        },
+                        "messageTimeout": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  },
+                  "zigbee": {
+                    "lqi": "2",
+                    "rssi": "3",
+                    "packetErrorRate": "15"
+                  },
+                  "digitalIO": {
+                    "invert": true,
+                    "_links": {
+                      "hasMetadata": {
+                        "invert": {
+                          "_id": "someIdLocalToServer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "write": {
+          "protocol": "C-API",
+          "services": [
+            {
+              "reqType": "PUT",
+              "serviceUrl": "communication-nodes/<nodeId>",
+              "rank": 1,
+              "params": [
+                {
+                  "paramName": "nodeId",
+                  "paramsType": "PathRef",
+                  "refType": "Direct",
+                  "rank": 0,
+                  "path": "commonDeviceAttributes/globalVariables/modbusNodeId",
+                  "conditions": []
+                }
+              ],
+              "requestBody": {
+                "port": {
+                  "address": "MBSL_LCCH1_Address"
+                }
+              },
+              "preConditions": []
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "dictionaryConfig": [
+    {
+      "pdmShortNameId": "pdmShortNameID-Sensor",
+      "pdmShortNameIdPath": "settings.value",
+      "identifier": "urn:edm-se:em:core:pr:position_sensor",
+      "identifierPath": "settings.key"
+    },
+    {
+      "pdmShortNameId": "pdmShortNameID-CubicleType",
+      "pdmShortNameIdPath": "settings.value",
+      "identifier": "urn:edm-se:em:core:pr:position_cubicle_type",
+      "identifierPath": "settings.key"
+    },
+    {
+      "pdmShortNameId": "pdmShortNameID-CubicleId",
+      "pdmShortNameIdPath": "settings.value",
+      "identifier": "urn:edm-se:em:core:pr:position_cubicle_id",
+      "identifierPath": "settings.key"
+    },
+    {
+      "pdmShortNameId": "pdmShortNameID-Equipment",
+      "pdmShortNameIdPath": "settings.value",
+      "identifier": "urn:edm-se:em:core:pr:position_equipment",
+      "identifierPath": "settings.key"
+    },
+    {
+      "pdmShortNameId": "pdmShortNameID-MeasuredPoint",
+      "pdmShortNameIdPath": "settings.value",
+      "identifier": "urn:edm-se:em:core:pr:position_measured_point",
+      "identifierPath": "settings.key"
+    }
+  ]
+}

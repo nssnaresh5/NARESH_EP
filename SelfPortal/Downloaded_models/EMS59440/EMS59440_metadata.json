@@ -1,0 +1,3169 @@
+{
+  "device": {
+    "identification": [
+      {
+        "id": "62ceb1c7-a5fe-4973-99c6-8c2384b1a5b4",
+        "name": "Brand",
+        "value": "Schneider Electric"
+      },
+      {
+        "id": "f7ae0ede-5027-40df-aa4b-2ce14fd9d1ff",
+        "name": "DeviceFamily",
+        "value": "Ambient"
+      },
+      {
+        "id": "dfd4b20a-e224-4bdd-910e-c35fee0d276a",
+        "name": "CommercialReference",
+        "value": "EMS59440"
+      },
+      {
+        "id": "b7f3deed-6b3f-4ccf-8a4f-eecd51f6b50b",
+        "name": "CommercialRange",
+        "value": "Base_Ambient_TH110_NSH_Test_bugretest"
+      }
+    ],
+    "configuration": {
+      "categories": [
+        {
+          "id": "9f78bfac-0c67-4a94-8138-f3cadbc225bb",
+          "name": "Device Settings",
+          "settings": [
+            {
+              "id": "LPHD1_UserAppliName",
+              "name": "Device Label",
+              "inputType": "Text",
+              "values": [],
+              "fieldValidation": {
+                "minLength": 0,
+                "maxLength": 5,
+                "regularExpression": ""
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Alphanumerical value assigned to the device on the single line diagram.",
+              "isMandatory": false,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "e5a87fa0-7bbc-40c9-9e1a-ec1f11299220",
+          "name": "Ambient Settings",
+          "settings": [
+            {
+              "id": "pdmShortNameID-Equipment",
+              "name": "Equipment",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "MV Cubicle",
+                  "value": "MV Cubicle"
+                },
+                {
+                  "key": "MV/LV Transformer",
+                  "value": "MV/LV Transformer"
+                },
+                {
+                  "key": "LV Switchboard",
+                  "value": "LV Switchboard"
+                },
+                {
+                  "key": "Other",
+                  "value": "Other"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "logicalMapping": [
+                "pdmShortNameID-Sensor"
+              ],
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-Sensor",
+              "name": "Sensor position",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "MV Cable Connection 1",
+                  "value": "MV Cable Connection 1"
+                },
+                {
+                  "key": "MV Cable Connection 2",
+                  "value": "MV Cable Connection 2"
+                },
+                {
+                  "key": "CB Lower Arms",
+                  "value": "CB Lower Arms"
+                },
+                {
+                  "key": "CB Upper Arms",
+                  "value": "CB Upper Arms"
+                },
+                {
+                  "key": "Bus Bar Connection 1",
+                  "value": "Bus Bar Connection 1"
+                },
+                {
+                  "key": "Bus Bar Connection 2",
+                  "value": "Bus Bar Connection 2"
+                },
+                {
+                  "key": "Other",
+                  "value": "Other"
+                },
+                {
+                  "key": "LV Cable Connection",
+                  "value": "LV Cable Connection"
+                },
+                {
+                  "key": "Winding Connection",
+                  "value": "Winding Connection"
+                },
+                {
+                  "key": "Tapping Link Connection",
+                  "value": "Tapping Link Connection"
+                },
+                {
+                  "key": "LV Customer Connection 1",
+                  "value": "LV Customer Connection 1"
+                },
+                {
+                  "key": "LV Customer Connection 2",
+                  "value": "LV Customer Connection 2"
+                },
+                {
+                  "key": "LV Incomer CB Downstream 1",
+                  "value": "LV Incomer CB Downstream 1"
+                },
+                {
+                  "key": "LV Incomer CB Downstream 2",
+                  "value": "LV Incomer CB Downstream 2"
+                },
+                {
+                  "key": "LV Incomer CB Upstream 1",
+                  "value": "LV Incomer CB Upstream 1"
+                },
+                {
+                  "key": "LV Incomer CB Upstream 2",
+                  "value": "LV Incomer CB Upstream 2"
+                },
+                {
+                  "key": "LV HBB-VBB Joint 1",
+                  "value": "LV HBB-VBB Joint 1"
+                },
+                {
+                  "key": "LV HBB-VBB Joint 2",
+                  "value": "LV HBB-VBB Joint 2"
+                },
+                {
+                  "key": "LV Splice Bar 1",
+                  "value": "LV Splice Bar 1"
+                },
+                {
+                  "key": "LV Splice Bar 2",
+                  "value": "LV Splice Bar 2"
+                },
+                {
+                  "key": "LV Feeder MCCB Loads",
+                  "value": "LV Feeder MCCB Loads"
+                },
+                {
+                  "key": "LV Bus Tie Upstream 1",
+                  "value": "LV Bus Tie Upstream 1"
+                },
+                {
+                  "key": "LV Bus Tie Upstream 2",
+                  "value": "LV Bus Tie Upstream 2"
+                },
+                {
+                  "key": "LV Bus Tie Downstream 1",
+                  "value": "LV Bus Tie Downstream 1"
+                },
+                {
+                  "key": "LV Bus Tie Downstream 2",
+                  "value": "LV Bus Tie Downstream 2"
+                },
+                {
+                  "key": "LV Feeder CB Upstream 1",
+                  "value": "LV Feeder CB Upstream 1"
+                },
+                {
+                  "key": "LV Feeder CB Upstream 2",
+                  "value": "LV Feeder CB Upstream 2"
+                },
+                {
+                  "key": "LV Feeder CB Downstream 1",
+                  "value": "LV Feeder CB Downstream 1"
+                },
+                {
+                  "key": "LV Feeder CB Downstream 2",
+                  "value": "LV Feeder CB Downstream 2"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "logicalMapping": [
+                "pdmShortNameID-MeasuredPoint",
+                "pdmShortNameID-CubicleId",
+                "pdmShortNameID-CubicleType",
+                "pdmShortNameID-CircuitBreakerID"
+              ],
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-MeasuredPoint",
+              "name": "Measured point",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "Phase 1",
+                  "value": "Phase 1"
+                },
+                {
+                  "key": "Phase 2",
+                  "value": "Phase 2"
+                },
+                {
+                  "key": "Phase 3",
+                  "value": "Phase 3"
+                },
+                {
+                  "key": "Neutral",
+                  "value": "Neutral"
+                },
+                {
+                  "key": "Other",
+                  "value": "Other"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-CubicleId",
+              "name": "Cubicle ID",
+              "inputType": "Scale",
+              "values": [],
+              "range": {
+                "min": 1,
+                "max": 34,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "Default value is none. Select the number of the cubicle / section where 1 is the first cubicle / section from left to right.",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-CubicleType",
+              "name": "Cubicle Type",
+              "inputType": "Options",
+              "values": [
+                {
+                  "key": "1 Incomer Or Feeder ACB Or BusTie",
+                  "value": "1 Incomer Or Feeder ACB Or BusTie"
+                },
+                {
+                  "key": "2 Incomers",
+                  "value": "2 Incomers"
+                },
+                {
+                  "key": "1 Incomer + 1 BusTie",
+                  "value": "1 Incomer + 1 BusTie"
+                },
+                {
+                  "key": "3 Feeders ACBs",
+                  "value": "3 Feeders ACBs"
+                },
+                {
+                  "key": "1 Incomer + 2 Feeder ACBs",
+                  "value": "1 Incomer + 2 Feeder ACBs"
+                },
+                {
+                  "key": "2 Incomers + 1 Bus Tie",
+                  "value": "2 Incomers + 1 Bus Tie"
+                },
+                {
+                  "key": "Feeder MCCBs + Drawers",
+                  "value": "Feeder MCCBs + Drawers"
+                },
+                {
+                  "key": "1 Incomer + Feeder MCCBs",
+                  "value": "1 Incomer + Feeder MCCBs"
+                },
+                {
+                  "key": "Drawers",
+                  "value": "Drawers"
+                },
+                {
+                  "key": "Feeder MCCBs",
+                  "value": "Feeder MCCBs"
+                },
+                {
+                  "key": "4 Feeders ACBs",
+                  "value": "4 Feeders ACBs"
+                },
+                {
+                  "key": "None",
+                  "value": "None"
+                }
+              ],
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            },
+            {
+              "id": "pdmShortNameID-CircuitBreakerID",
+              "name": "Drawer ID",
+              "inputType": "Scale",
+              "values": [],
+              "range": {
+                "min": 1,
+                "max": 20,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": false
+            }
+          ]
+        },
+        {
+          "id": "c76da013-7d77-44e0-a446-66c4d368e4df",
+          "name": "Communication",
+          "settings": [
+            {
+              "id": "MBSL_LCCH1_Address",
+              "name": "Modbus Address",
+              "inputType": "Scale",
+              "values": [],
+              "range": {
+                "min": 1,
+                "max": 247,
+                "stepValue": 1,
+                "isNoneApplicable": false
+              },
+              "defaultValue": "",
+              "unitSymbol": "",
+              "helpText": "",
+              "isMandatory": true,
+              "isReadOnly": true
+            }
+          ]
+        }
+      ]
+    },
+    "dictionaryConfig": [
+      {
+        "pdmShortNameId": "pdmShortNameID-Equipment",
+        "logicalMapping": [
+          {
+            "derivedSetting": "pdmShortNameID-Sensor",
+            "dependentSettings": [
+              "pdmShortNameID-Equipment"
+            ],
+            "possibleDerivedValues": [
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "MV Cable Connection 1",
+                    "value": "MV Cable Connection 1"
+                  },
+                  {
+                    "key": "MV Cable Connection 2",
+                    "value": "MV Cable Connection 2"
+                  },
+                  {
+                    "key": "CB Lower Arms",
+                    "value": "CB Lower Arms"
+                  },
+                  {
+                    "key": "CB Upper Arms",
+                    "value": "CB Upper Arms"
+                  },
+                  {
+                    "key": "Bus Bar Connection 1",
+                    "value": "Bus Bar Connection 1"
+                  },
+                  {
+                    "key": "Bus Bar Connection 2",
+                    "value": "Bus Bar Connection 2"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "MV Cable Connection 1",
+                    "value": "MV Cable Connection 1"
+                  },
+                  {
+                    "key": "LV Cable Connection",
+                    "value": "LV Cable Connection"
+                  },
+                  {
+                    "key": "Winding Connection",
+                    "value": "Winding Connection"
+                  },
+                  {
+                    "key": "Tapping Link Connection",
+                    "value": "Tapping Link Connection"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "LV Customer Connection 1",
+                    "value": "LV Customer Connection 1"
+                  },
+                  {
+                    "key": "LV Customer Connection 2",
+                    "value": "LV Customer Connection 2"
+                  },
+                  {
+                    "key": "LV Incomer CB Downstream 1",
+                    "value": "LV Incomer CB Downstream 1"
+                  },
+                  {
+                    "key": "LV Incomer CB Downstream 2",
+                    "value": "LV Incomer CB Downstream 2"
+                  },
+                  {
+                    "key": "LV Incomer CB Upstream 1",
+                    "value": "LV Incomer CB Upstream 1"
+                  },
+                  {
+                    "key": "LV Incomer CB Upstream 2",
+                    "value": "LV Incomer CB Upstream 2"
+                  },
+                  {
+                    "key": "LV HBB-VBB Joint 1",
+                    "value": "LV HBB-VBB Joint 1"
+                  },
+                  {
+                    "key": "LV HBB-VBB Joint 2",
+                    "value": "LV HBB-VBB Joint 2"
+                  },
+                  {
+                    "key": "LV Splice Bar 1",
+                    "value": "LV Splice Bar 1"
+                  },
+                  {
+                    "key": "LV Splice Bar 2",
+                    "value": "LV Splice Bar 2"
+                  },
+                  {
+                    "key": "LV Feeder MCCB Loads",
+                    "value": "LV Feeder MCCB Loads"
+                  },
+                  {
+                    "key": "LV Bus Tie Upstream 1",
+                    "value": "LV Bus Tie Upstream 1"
+                  },
+                  {
+                    "key": "LV Bus Tie Upstream 2",
+                    "value": "LV Bus Tie Upstream 2"
+                  },
+                  {
+                    "key": "LV Bus Tie Downstream 1",
+                    "value": "LV Bus Tie Downstream 1"
+                  },
+                  {
+                    "key": "LV Bus Tie Downstream 2",
+                    "value": "LV Bus Tie Downstream 2"
+                  },
+                  {
+                    "key": "LV Feeder CB Upstream 1",
+                    "value": "LV Feeder CB Upstream 1"
+                  },
+                  {
+                    "key": "LV Feeder CB Upstream 2",
+                    "value": "LV Feeder CB Upstream 2"
+                  },
+                  {
+                    "key": "LV Feeder CB Downstream 1",
+                    "value": "LV Feeder CB Downstream 1"
+                  },
+                  {
+                    "key": "LV Feeder CB Downstream 2",
+                    "value": "LV Feeder CB Downstream 2"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "Other"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "pdmShortNameId": "pdmShortNameID-Sensor",
+        "logicalMapping": [
+          {
+            "derivedSetting": "pdmShortNameID-MeasuredPoint",
+            "logicalOperation": "AND",
+            "dependentSettings": [
+              "pdmShortNameID-Equipment",
+              "pdmShortNameID-Sensor"
+            ],
+            "possibleDerivedValues": [
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "CB Lower Arms"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "CB Upper Arms"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Bus Bar Connection 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Bus Bar Connection 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Other"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "LV Cable Connection"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Winding Connection"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Tapping Link Connection"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Other"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV HBB-VBB Joint 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV HBB-VBB Joint 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Splice Bar 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Splice Bar 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder MCCB Loads"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "Other"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "Other",
+                    "pdmShortNameID-Sensor": "Other"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "Phase 1",
+                    "value": "Phase 1"
+                  },
+                  {
+                    "key": "Phase 2",
+                    "value": "Phase 2"
+                  },
+                  {
+                    "key": "Phase 3",
+                    "value": "Phase 3"
+                  },
+                  {
+                    "key": "Neutral",
+                    "value": "Neutral"
+                  },
+                  {
+                    "key": "Other",
+                    "value": "Other"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "derivedSetting": "pdmShortNameID-CubicleId",
+            "logicalOperation": "AND",
+            "dependentSettings": [
+              "pdmShortNameID-Equipment",
+              "pdmShortNameID-Sensor"
+            ],
+            "possibleDerivedValues": [
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "CB Lower Arms"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "CB Upper Arms"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Bus Bar Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Bus Bar Connection 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "LV Cable Connection"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Winding Connection"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Tapping Link Connection"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV HBB-VBB Joint 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV HBB-VBB Joint 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Splice Bar 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Splice Bar 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder MCCB Loads"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Downstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Downstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 34,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              }
+            ]
+          },
+          {
+            "derivedSetting": "pdmShortNameID-CubicleType",
+            "logicalOperation": "AND",
+            "dependentSettings": [
+              "pdmShortNameID-Equipment",
+              "pdmShortNameID-Sensor"
+            ],
+            "possibleDerivedValues": [
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV HBB-VBB Joint 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV HBB-VBB Joint 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Splice Bar 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Splice Bar 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder MCCB Loads"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Downstream 1"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Downstream 2"
+                  }
+                ],
+                "values": [
+                  {
+                    "key": "1 Incomer Or Feeder ACB Or BusTie",
+                    "value": "1 Incomer Or Feeder ACB Or BusTie"
+                  },
+                  {
+                    "key": "2 Incomers",
+                    "value": "2 Incomers"
+                  },
+                  {
+                    "key": "1 Incomer + 1 BusTie",
+                    "value": "1 Incomer + 1 BusTie"
+                  },
+                  {
+                    "key": "3 Feeders ACBs",
+                    "value": "3 Feeders ACBs"
+                  },
+                  {
+                    "key": "1 Incomer + 2 Feeder ACBs",
+                    "value": "1 Incomer + 2 Feeder ACBs"
+                  },
+                  {
+                    "key": "2 Incomers + 1 Bus Tie",
+                    "value": "2 Incomers + 1 Bus Tie"
+                  },
+                  {
+                    "key": "Feeder MCCBs + Drawers",
+                    "value": "Feeder MCCBs + Drawers"
+                  },
+                  {
+                    "key": "1 Incomer + Feeder MCCBs",
+                    "value": "1 Incomer + Feeder MCCBs"
+                  },
+                  {
+                    "key": "Drawers",
+                    "value": "Drawers"
+                  },
+                  {
+                    "key": "Feeder MCCBs",
+                    "value": "Feeder MCCBs"
+                  },
+                  {
+                    "key": "4 Feeders ACBs",
+                    "value": "4 Feeders ACBs"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "derivedSetting": "pdmShortNameID-CircuitBreakerID",
+            "logicalOperation": "AND",
+            "dependentSettings": [
+              "pdmShortNameID-Equipment",
+              "pdmShortNameID-Sensor"
+            ],
+            "possibleDerivedValues": [
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "CB Lower Arms"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "CB Upper Arms"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Bus Bar Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV Cubicle",
+                    "pdmShortNameID-Sensor": "Bus Bar Connection 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "MV Cable Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "LV Cable Connection"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Winding Connection"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "MV/LV Transformer",
+                    "pdmShortNameID-Sensor": "Tapping Link Connection"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Customer Connection 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Downstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Incomer CB Upstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder MCCB Loads"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Upstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Bus Tie Downstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Upstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Downstream 1"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              },
+              {
+                "dependentSettingValues": [
+                  {
+                    "pdmShortNameID-Equipment": "LV Switchboard",
+                    "pdmShortNameID-Sensor": "LV Feeder CB Downstream 2"
+                  }
+                ],
+                "range": {
+                  "min": 1,
+                  "max": 20,
+                  "stepValue": 1,
+                  "isNoneApplicable": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "deviceImageId": "b5121c38-6f8b-4217-8a37-c20c4be5e1f5"
+  }
+}
