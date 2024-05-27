@@ -11,7 +11,7 @@ from pydantic import BaseModel, Field
 
 
 class CommercialModel(BaseModel):
-    commercialReference: Optional[str] = []
+    commercialReference: Optional[str] = ""
     deviceImageId: Optional[str] = ""
 
 
@@ -43,10 +43,10 @@ class Value(BaseModel):
 
 
 class Range(BaseModel):
-    min: Optional[int] = None
-    max: Optional[int] = None
-    stepValue: Optional[int] = None
-    isNoneApplicable: Optional[bool] = None
+    min: Optional[int] = 1
+    max: Optional[int] = 65535
+    stepValue: Optional[int] = 1
+    isNoneApplicable: Optional[bool] = False
 
 
 class FieldValidation(BaseModel):
@@ -91,10 +91,6 @@ class MainIncomer(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class ReferenceOfBreaker(BaseModel):
@@ -111,10 +107,6 @@ class ReferenceOfBreaker(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class RatedCurrent(BaseModel):
@@ -131,10 +123,6 @@ class RatedCurrent(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class RatedVoltage(BaseModel):
@@ -151,10 +139,6 @@ class RatedVoltage(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class LoadName(BaseModel):
@@ -228,10 +212,6 @@ class LoadWorks(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class AssociatedBreakerLabel(BaseModel):
@@ -275,10 +255,6 @@ class MountingPosition(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class TripCurveType(BaseModel):
@@ -295,10 +271,6 @@ class TripCurveType(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class Usage(BaseModel):
@@ -315,10 +287,6 @@ class Usage(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class PowerSupply(BaseModel):
@@ -336,10 +304,6 @@ class PowerSupply(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class PhaseSequence(BaseModel):
@@ -356,10 +320,6 @@ class PhaseSequence(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class PowerFactorSign(BaseModel):
@@ -386,10 +346,6 @@ class PowerFactorSign(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class SystemType(BaseModel):
@@ -415,10 +371,6 @@ class SystemType(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class DeviceLabel(BaseModel):
@@ -490,10 +442,6 @@ class ModbusAddress(BaseModel):
     isMandatory: Optional[bool] = False
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class AlarmOverloadThreshold(BaseModel):
@@ -516,10 +464,6 @@ class AlarmOverloadThreshold(BaseModel):
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
     logicalMapping: Optional[List[str]] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class AlarmOverVoltage(BaseModel):
@@ -542,10 +486,6 @@ class AlarmOverVoltage(BaseModel):
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
     logicalMapping: Optional[List[str]] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 
 class AlarmEarthLeakage(BaseModel):
@@ -568,10 +508,6 @@ class AlarmEarthLeakage(BaseModel):
     isReadOnly: Optional[bool] = False
     dependencyConfig: Optional[None] = None
     logicalMapping: Optional[List[str]] = None
-    # shortname: Optional[str] = ""
-    # parametername: Optional[str] = ""
-    # addreport: Optional[bool] = True
-    # edit: Optional[bool] = True
 
 # from SelfPortal.Models.MetadataModel import *
 
