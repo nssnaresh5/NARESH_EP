@@ -17,7 +17,6 @@ def get_slot_mapping(IsNeutralAvailable, phase_number):
         return [{"value": f"slot{i + 1}Phase", "rank": 1, "path": f"electrical.slot{i + 1}Phase"} for i, key in enumerate(phases)]
 
 
-# pprint.pprint(get_slot_mapping(False, 2))
 # pprint.pprint(get_slot_mapping(False, 1))
 def generate_possible_derived_values(IsNeutralAvailable, phase_number):
     slot_mapping = get_slot_mapping(IsNeutralAvailable, phase_number)
@@ -27,11 +26,7 @@ def generate_possible_derived_values(IsNeutralAvailable, phase_number):
         value = slot['value']
         for installation in ["hasUpstreamDataPoint", "hasDownstreamDataPoint"]:
             for sign in ["+", "-"]:
-                new_dict = {
-                    "LPHD1_InstallationFromBrk": installation,
-                    "value": "C-B-A"  # This value should be calculated based on your specific logic
-                }
-                new_dict[value] = sign + value[-1]
+                new_dict = {"LPHD1_InstallationFromBrk": installation, "value": "C-B-A", value: sign + value[-1]}
                 possible_derived_values.append(new_dict)
 
     return possible_derived_values
@@ -41,4 +36,3 @@ def generate_possible_derived_values(IsNeutralAvailable, phase_number):
 IsNeutralAvailable = True
 phase_number = 3
 possible_derived_values = generate_possible_derived_values(IsNeutralAvailable, phase_number)
-pass
