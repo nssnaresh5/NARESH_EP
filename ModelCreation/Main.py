@@ -16,4 +16,3 @@ for k1, v1 in input_data.items():
     #     for k2, v2 in categoryName.items():
     #         if k1 in v2:
     #             pass
-pass
