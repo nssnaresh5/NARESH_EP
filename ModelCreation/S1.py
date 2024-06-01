@@ -109,7 +109,7 @@ def generate_possible_derived_values(IsNeutralAvailable, phase_number):
     return possible_derived_values
 
 
-# Example usage:
+# Example usage
 IsNeutralAvailable = True
 phase_number = 3
 possible_derived_values = generate_possible_derived_values(IsNeutralAvailable, phase_number)
