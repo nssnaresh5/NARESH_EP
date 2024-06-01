@@ -16,6 +16,6 @@ class ExcelManipulation:
                 if key not in new_dict:
                     new_dict[key] = values[i]
             self.input_data.append(new_dict)
-        return self.input_data[0]
+        return self.input_data
 
 # print(ExcelManipulation().input_data[0])
