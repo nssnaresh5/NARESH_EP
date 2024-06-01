@@ -5,7 +5,7 @@ from requiredJson import get_devicefamily_with_value
 
 metadata = MetadataModel()
 configurator = ConfiguratorModel()
-input_data = ExcelManipulation().read_excel()
+input_data = ExcelManipulation().read_input_file()
 for inp in input_data:
     commercialReference = inp["Commercial Reference"]
     range = inp["Commercial Reference"] + "_" + inp["Family"].replace(" ", "_")
