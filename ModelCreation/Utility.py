@@ -3,7 +3,7 @@ import pandas as pd
 
 class ExcelManipulation:
     def __init__(self):
-        self.input_excel_path = r"C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\wirelessModels\ESXP_Param_v1.xlsx"
+        self.input_excel_path = (r"C:\Users\SESA503669\OneDrive - Schneider Electric\D\D\ETPX\wirelessModels\ESXP_Param_v1.xlsx")
 
     def read_excel(self):
         df = pd.read_excel(self.input_excel_path, sheet_name='Param', header=[0])
