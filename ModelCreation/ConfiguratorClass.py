@@ -110,14 +110,14 @@ class Read(BaseModel):
     protocol: Optional[str] = None
     services: Optional[List[Services]] = None
     id: Optional[str] = None
-    advancedSettings: Optional[List[AdvancedSetting]] = None
+    advancedSettings: Optional[List[AdvancedSetting]] = []
 
 
 class Write(BaseModel):
     protocol: Optional[str] = None
     services: Optional[List[Services]] = None
     id: Optional[str] = None
-    advancedSettings: Optional[List[AdvancedSetting]] = None
+    advancedSettings: Optional[List[AdvancedSetting]] = []
 
 
 class AdvancedSettingsConfig(BaseModel):
