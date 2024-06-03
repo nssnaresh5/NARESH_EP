@@ -1,6 +1,7 @@
 import pandas as pd
 from openpyxl import load_workbook
 
+
 class ExcelManipulation:
     def __init__(self):
         self.input_data = None

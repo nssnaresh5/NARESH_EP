@@ -3,10 +3,7 @@
 #   timestamp: 2023-10-24T11:55:44+00:00
 
 from __future__ import annotations
-
-import os
 from typing import List, Optional
-
 from pydantic import BaseModel, Field
 
 

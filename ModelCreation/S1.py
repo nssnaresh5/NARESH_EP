@@ -106,7 +106,7 @@ def get_phase_sequence(type, mounting_position, phase_sequence):
 # print(get_phase_sequence("ST", "Bottom", "A2C"))  # Output: C2A
 
 
-def get_dependent_response_values(IsNeutralAvailable, phase_number):
+def get_dependent_response_values(isneutralavailable, phase_number):
     mapping = {
         "N": "slot1Phase",
         "A": "slot2Phase",
@@ -116,29 +116,29 @@ def get_dependent_response_values(IsNeutralAvailable, phase_number):
 
     phases = ['A', 'B', 'C'][:phase_number]
 
-    if IsNeutralAvailable.lower() == "yes":
+    if isneutralavailable.lower() == "yes":
         return [{"value": mapping[key], "rank": 1, "path": f"electrical.{mapping[key]}"} for key in phases]
     else:
         return [{"value": f"slot{i + 1}Phase", "rank": 1, "path": f"electrical.slot{i + 1}Phase"} for i, key in enumerate(phases)]
 
 
-def get_possible_derived_values_powersupply(IsNeutralAvailable, phase_number, type, actualMountingPosition, actualPowerSupply):
-    if actualMountingPosition != 'NA':
-        data = actualMountingPosition
+def get_possible_derived_values_powersupply(isneutralavailable, phase_number, type, actualmountingposition, actualpowersupply):
+    if actualmountingposition != 'NA':
+        data = actualmountingposition
         mpresult = []
         if '\n' in data:
             mpresult = data.split('\n')
         else:
             mpresult.append(data)
-    if actualPowerSupply != 'NA':
-        data1 = actualPowerSupply
+    if actualpowersupply != 'NA':
+        data1 = actualpowersupply
         psresult = []
         if '\n' in data1:
             psresult = data1.split('\n')
         else:
             psresult.append(data1)
     mapping_ps_to_custom = dict(zip_longest(["Top", "Bottom"], psresult))
-    slot_mapping = [get_dependent_response_values(IsNeutralAvailable, phase_number)[0]]
+    slot_mapping = [get_dependent_response_values(isneutralavailable, phase_number)[0]]
     possible_derived_values = []
     for slot in slot_mapping:
         slptphase = slot['value']
@@ -153,23 +153,23 @@ def get_possible_derived_values_powersupply(IsNeutralAvailable, phase_number, ty
     return possible_derived_values
 
 
-def get_possible_derived_values_phasesequence(IsNeutralAvailable, phase_number, type, actualMountingPosition, actualPowerSupply):
-    if actualMountingPosition != 'NA':
-        data = actualMountingPosition
+def get_possible_derived_values_phasesequence(isneutralavailable, phase_number, type, actualmountingposition, actualpowersupply):
+    if actualmountingposition != 'NA':
+        data = actualmountingposition
         mpresult = []
         if '\n' in data:
             mpresult = data.split('\n')
         else:
             mpresult.append(data)
-    if actualPowerSupply != 'NA':
-        data1 = actualPowerSupply
+    if actualpowersupply != 'NA':
+        data1 = actualpowersupply
         psresult = []
         if '\n' in data1:
             psresult = data1.split('\n')
         else:
             psresult.append(data1)
 
-    slot_mapping = get_dependent_response_values(IsNeutralAvailable, phase_number)
+    slot_mapping = get_dependent_response_values(isneutralavailable, phase_number)
     # mapping_mp_to_custom = dict(zip_longest(["Top", "Bottom"], psresult))
     mapping_ps = {
         "1": ["A", "B", "C"],
@@ -188,23 +188,23 @@ def get_possible_derived_values_phasesequence(IsNeutralAvailable, phase_number, 
     return possible_derived_values
 
 
-def get_possible_derived_values_write_phase_sequence(IsNeutralAvailable, phase_number, type, actualMountingPosition, actualPowerSupply,slotValue):
-    if actualMountingPosition != 'NA':
-        data = actualMountingPosition
+def get_possible_derived_values_write_phase_sequence(isneutralavailable, phase_number, type, actualmountingposition, actualpowersupply, slotvalue):
+    if actualmountingposition != 'NA':
+        data = actualmountingposition
         mpresult = []
         if '\n' in data:
             mpresult = data.split('\n')
         else:
             mpresult.append(data)
-    if actualPowerSupply != 'NA':
-        data1 = actualPowerSupply
+    if actualpowersupply != 'NA':
+        data1 = actualpowersupply
         psresult = []
         if '\n' in data1:
             psresult = data1.split('\n')
         else:
             psresult.append(data1)
     mapping_ps_to_custom = dict(zip_longest(["Top", "Bottom"], psresult))
-    slot_mapping = get_dependent_response_values(IsNeutralAvailable, phase_number)
+    slot_mapping = get_dependent_response_values(isneutralavailable, phase_number)
     mapping_ps = {
         "1": ["A", "B", "C"],
         "2": ["AB", "AC", "BA", "BC", "CA", "CB"],
@@ -220,7 +220,7 @@ def get_possible_derived_values_write_phase_sequence(IsNeutralAvailable, phase_n
                     "LPHD1_InstallationFromBrk": mp_mapping.get(i1),
                     "LPHD1_PowSupCfg": i2,
                     "LPHD1_PhsRot": "-".join(i3),
-                    "value": sign + ps[slotValue]
+                    "value": sign + ps[slotvalue]
                 }
                 possible_derived_values.append(new_dict)
     return possible_derived_values
@@ -245,22 +245,22 @@ def create_advanced_settings_read():
     powerSupply = 37
     """
 
-    IsNeutralAvailable = input_data["IsNeutral"]
+    isneutralavailable = input_data["IsNeutral"]
     # Power supply read
     phase_number = int(input_data["Phase"])
     attribute1 = AdvancedSetting()
     attribute1.pdmShortNameId = "LPHD1_PowSupCfg"
     attribute1.dependentSettings = ["LPHD1_InstallationFromBrk"]
-    dependent_response_values = get_dependent_response_values(IsNeutralAvailable, phase_number)
+    dependent_response_values = get_dependent_response_values(isneutralavailable, phase_number)
     attribute1.dependentResponseValues = [dependent_response_values[0]]
-    possible_derived_values_powersupply = get_possible_derived_values_powersupply(IsNeutralAvailable, phase_number, input_data['ConversionType'], device_list[36], device_list[37])
+    possible_derived_values_powersupply = get_possible_derived_values_powersupply(isneutralavailable, phase_number, input_data['ConversionType'], device_list[36], device_list[37])
     attribute1.possibleDerivedValues = possible_derived_values_powersupply
     # # Phase sequence read
     attribute2 = AdvancedSetting()
     attribute2.pdmShortNameId = "LPHD1_PhsRot"
     attribute2.dependentSettings = ["LPHD1_InstallationFromBrk"]
     attribute2.dependentResponseValues = dependent_response_values
-    possible_derived_values_pasesequence = get_possible_derived_values_phasesequence(IsNeutralAvailable, phase_number, input_data['ConversionType'], device_list[36], device_list[37])
+    possible_derived_values_pasesequence = get_possible_derived_values_phasesequence(isneutralavailable, phase_number, input_data['ConversionType'], device_list[36], device_list[37])
     attribute2.possibleDerivedValues = possible_derived_values_pasesequence
 
     # # Read
@@ -271,7 +271,7 @@ def create_advanced_settings_read():
     # Write
     write = Write()
     write.advancedSettings = []
-    for n,att in enumerate(dependent_response_values):
+    for n, att in enumerate(dependent_response_values):
         attribute3 = AdvancedSetting()
         attribute3.attribute = att
         attribute3.dependentSettings = [
@@ -279,12 +279,13 @@ def create_advanced_settings_read():
             "LPHD1_PowSupCfg",
             "LPHD1_PhsRot"
         ]
-        attribute3.possibleDerivedValues = get_possible_derived_values_write_phase_sequence(IsNeutralAvailable, phase_number, input_data['ConversionType'], device_list[36], device_list[37],n)
+        attribute3.possibleDerivedValues = get_possible_derived_values_write_phase_sequence(isneutralavailable, phase_number, input_data['ConversionType'], device_list[36], device_list[37], n)
         write.advancedSettings.append(attribute3)
     pass
 
-def create_advanced_settings_write():
-    pass
+
+# def create_advanced_settings_write():
+#     pass
 
 
 create_advanced_settings_read()

@@ -29,5 +29,4 @@ AssocciatedBreakerLabel = {
     "responseBody": {
         "label": "LPHD1_CircuitID"
     },
-    # "serviceMapping_commonDeviceAttributes_globalVariables":["deviceId","electricalDatapoint"]
 }

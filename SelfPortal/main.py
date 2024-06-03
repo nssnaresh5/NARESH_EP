@@ -80,10 +80,7 @@ class SelfPortal:
                         if settingName == "ReferenceOfBreaker":
                             if get_ref_data[12] != 'NA' and type(get_ref_data[12]).__name__ != 'float':
                                 get_ref_data_new = get_ref_data[12].split('\n')
-                                # val_ref = Value()
                                 for ref in get_ref_data_new:
-                                    # val_ref.key = ref
-                                    # val_ref.value = ref
                                     val_ref = Value(key=ref, value=ref)
                                     settingobj['values'].append(val_ref.dict())
                                 settingobj['defaultValue'] = get_ref_data_new[0]
@@ -93,10 +90,7 @@ class SelfPortal:
                             if get_ref_data[16] != 'NA' and type(get_ref_data[16]).__name__ != 'float':
                                 get_ref_data_new = get_ref_data[16].split('\n')
                                 get_ref_data_new_amp = [item.replace('A', '').replace(',', '.') if 'A' in item else item.replace(',', '.') for item in get_ref_data_new]
-                                # val_rc = Value()
                                 for ref in get_ref_data_new_amp:
-                                    # val_rc.key = ref
-                                    # val_rc.value = ref
                                     val_rc = Value(key=ref, value=ref)
                                     settingobj['values'].append(val_rc.dict())
                                 settingobj['defaultValue'] = get_ref_data_new_amp[0]
@@ -114,19 +108,14 @@ class SelfPortal:
                                 for i in range(len(result)):
 
                                     if result[i] in ['line', 'top']:
-                                        # val_mp.key = 'hasUpstreamDataPoint'
-                                        # val_mp.value = result[i].upper()
                                         val_mp = Value(key='hasUpstreamDataPoint', value=result[i].upper())
                                     elif result[i] in ['load', 'bottom']:
-                                        # val_mp.key = 'hasDownstreamDataPoint'
-                                        # val_mp.value = result[i].upper()
                                         val_mp = Value(key='hasDownstreamDataPoint', value=result[i].upper())
                                     settingobj['values'].append(val_mp.dict())
                                 settingobj['defaultValue'] = result[0].upper()
                             else:
                                 continue
                         category_data.settings.append(settingobj)
-                        # continue
                 categories_data.append(category_data.dict())
             elif category_name == "Usage" and "n" not in value.values():
                 category_data.name = category_name
