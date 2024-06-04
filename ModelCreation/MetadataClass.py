@@ -22,21 +22,21 @@ class DependentSettingValue(BaseModel):
 
 class PossibleDerivedValue(BaseModel):
     # dependentSettingValues: Optional[List[DependentSettingValue]] = None
-    dependentSettingValues: Optional[List[dict]] = None
-    values: Optional[List[Value]] = None
+    dependentSettingValues: Optional[List[dict]] = []
+    values: Optional[List[Value]] = []
     range: Optional[Range] = None
 
 
 class LogicalMapping(BaseModel):
     derivedSetting: Optional[str] = None
-    dependentSettings: Optional[List[str]] = None
-    possibleDerivedValues: Optional[List[PossibleDerivedValue]] = None
+    dependentSettings: Optional[List[str]] = []
+    possibleDerivedValues: Optional[List[PossibleDerivedValue]] = []
     logicalOperation: Optional[str] = None
 
 
 class DictionaryConfig(BaseModel):
     pdmShortNameId: Optional[str] = None
-    logicalMapping: Optional[List[LogicalMapping]] = None
+    logicalMapping: Optional[List[LogicalMapping]] = []
 
 
 class FieldValidation(BaseModel):
@@ -56,7 +56,7 @@ class Setting(BaseModel):
     id: Optional[str] = None
     name: Optional[str] = None
     inputType: Optional[str] = None
-    values: Optional[List[Value]] = None
+    values: Optional[List[Value]] = []
     fieldValidation: Optional[FieldValidation] = None
     defaultValue: Optional[str] = None
     unitSymbol: Optional[str] = None
@@ -64,7 +64,7 @@ class Setting(BaseModel):
     helpText: Optional[str] = None
     isMandatory: Optional[bool] = None
     isReadOnly: Optional[bool] = None
-    logicalMapping: Optional[List[str]] = None
+    logicalMapping: Optional[List[str]] = []
     range: Optional[Range] = None
     scaleFactor: Optional[int] = None
 
@@ -72,18 +72,18 @@ class Setting(BaseModel):
 class Category(BaseModel):
     id: Optional[str] = None
     name: Optional[str] = None
-    settings: Optional[List[Setting]] = None
+    settings: Optional[List[Setting]] = []
 
 
 class Alarm(BaseModel):
     id: Optional[str] = None
     name: Optional[str] = None
-    settings: Optional[List[Setting]] = None
+    settings: Optional[List[Setting]] = []
 
 
 class Configuration(BaseModel):
-    categories: Optional[List[Category]] = None
-    alarms: Optional[List[Alarm]] = None
+    categories: Optional[List[Category]] = []
+    alarms: Optional[List[Alarm]] = []
 
 
 class Identification(BaseModel):
@@ -93,9 +93,9 @@ class Identification(BaseModel):
 
 
 class Device(BaseModel):
-    identification: Optional[List[Identification]] = None
+    identification: Optional[List[Identification]] = []
     configuration: Optional[Configuration] = None
-    dictionaryConfig: Optional[List[DictionaryConfig]] = None
+    dictionaryConfig: Optional[List[DictionaryConfig]] = []
     deviceImageId: Optional[str] = None
     deviceImageUrl: Optional[str] = None
 

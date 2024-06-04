@@ -67,7 +67,7 @@ deviceFamily = [
 
 categoryName = {
     "Associated breaker settings": [
-        "Associated breaker Label",
+        "Associated breaker label",
         "Mounting position",
         "Breaker reference",
         "Rated voltage",
@@ -98,7 +98,8 @@ categoryName = {
         "System type",
         "PF sign",
         "Power supply",
-        "Current direction"
+        "Current direction",
+        "Phase sequence"
     ],
     "Communication": [
         "Modbus address"

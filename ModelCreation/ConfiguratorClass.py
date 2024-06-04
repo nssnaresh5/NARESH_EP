@@ -46,7 +46,7 @@ class Params(BaseModel):
     refType: Optional[str] = None
     rank: Optional[int] = None
     path: Optional[str] = None
-    conditions: Optional[List[Condition]] = None
+    conditions: Optional[List[Condition]] = []
 
 
 class Services(BaseModel):
@@ -54,8 +54,8 @@ class Services(BaseModel):
     reqType: Optional[RequestType] = None
     serviceUrl: Optional[str] = None
     rank: Optional[int] = None
-    params: Optional[List[Params]] = None
-    preConditions: Optional[List[Params]] = None
+    params: Optional[List[Params]] = []
+    preConditions: Optional[List[Params]] = []
     response: Optional[Dict] = None
     requestBody: Optional[Any] = None
     value: Optional[Any] = None
@@ -75,21 +75,21 @@ class Services(BaseModel):
 
 class CommonDeviceAttributes(BaseModel):
     id: Optional[str] = None
-    globalVariables: Optional[List[str]] = None
-    services: Optional[List[Services]] = None
+    globalVariables: Optional[List[str]] = []
+    services: Optional[List[Services]] = []
 
 
-class Category(BaseModel):
+class category(BaseModel):
     id: Optional[str] = None
-    pdmShortNameIds: Optional[List[str]] = None
+    pdmShortNameIds: Optional[List[str]] = []
     read: Optional[Read] = None
     write: Optional[Write] = None
 
 
 class ServiceMapping(BaseModel):
     commonDeviceAttributes: Optional[CommonDeviceAttributes] = None
-    categories: Optional[List[Category]] = None
-    alarms: Optional[List[Category]] = None
+    categories: Optional[List[category]] = []
+    alarms: Optional[List[category]] = []
 
 
 class Attribute(BaseModel):
@@ -101,34 +101,34 @@ class Attribute(BaseModel):
 class AdvancedSetting(BaseModel):
     pdmShortNameId: Optional[str] = None
     attribute: Optional[Attribute] = None
-    dependentSettings: Optional[List] = None
-    dependentResponseValues: Optional[List[Attribute]] = None
-    possibleDerivedValues: Optional[List[Dict]] = None
+    dependentSettings: Optional[List] = []
+    dependentResponseValues: Optional[List[Attribute]] = []
+    possibleDerivedValues: Optional[List[Dict]] = []
 
 
 class Read(BaseModel):
     protocol: Optional[str] = None
-    services: Optional[List[Services]] = None
+    services: Optional[List[Services]] = []
     id: Optional[str] = None
     advancedSettings: Optional[List[AdvancedSetting]] = []
 
 
 class Write(BaseModel):
     protocol: Optional[str] = None
-    services: Optional[List[Services]] = None
+    services: Optional[List[Services]] = []
     id: Optional[str] = None
     advancedSettings: Optional[List[AdvancedSetting]] = []
 
 
 class AdvancedSettingsConfig(BaseModel):
-    read: Optional[List[Read]] = None
-    write: Optional[List[Write]] = None
+    read: Optional[List[Read]] = []
+    write: Optional[List[Write]] = []
 
 
 class ConfiguratorModel(BaseModel):
     serviceMapping: Optional[ServiceMapping] = None
     advancedSettingsConfig: Optional[AdvancedSettingsConfig] = None
-    dictionaryConfig: Optional[List[Dict]] = None
+    dictionaryConfig: Optional[List[Dict]] = []
 
 
 

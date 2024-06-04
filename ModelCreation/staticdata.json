@@ -1,4 +1,138 @@
 {
+  "globalVariableServices": [
+    {
+      "globalVariable": "deviceId",
+      "reqType": "GET",
+      "serviceUrl": "devices/<deviceId>",
+      "rank": 1,
+      "params": [
+        {
+          "paramName": "deviceId",
+          "paramsType": "FromClientApp",
+          "refType": "None",
+          "rank": 0,
+          "path": "",
+          "conditions": []
+        }
+      ],
+      "preConditions": [],
+      "response": {
+        "_id": "deviceId"
+      }
+    },
+    {
+      "globalVariable": "ambientDatapoint",
+      "reqType": "GET",
+      "serviceUrl": "data-points/<dataPointId>",
+      "rank": 5,
+      "params": [
+        {
+          "paramName": "dataPointId",
+          "paramsType": "PathRef",
+          "refType": "ListWithConditionOnResponse",
+          "rank": 1,
+          "path": "sensor._links.hasDataPoints._id",
+          "conditions": [
+            {
+              "propertyName": "type",
+              "operator": "Equals",
+              "value": "AMBIENT"
+            }
+          ]
+        }
+      ],
+      "preConditions": [],
+      "response": {
+        "_id": "ambientDatapoint",
+        "type": "AMBIENT"
+      }
+    },
+    {
+      "globalVariable": "electricalDatapoint",
+      "reqType": "GET",
+      "serviceUrl": "data-points/<dataPointId>",
+      "rank": 2,
+      "params": [
+        {
+          "paramName": "dataPointId",
+          "paramsType": "PathRef",
+          "refType": "ListWithConditionOnResponse",
+          "rank": 1,
+          "path": "sensor._links.hasDataPoints._id",
+          "conditions": [
+            {
+              "propertyName": "type",
+              "operator": "Equals",
+              "value": "ELECTRICAL"
+            }
+          ]
+        }
+      ],
+      "preConditions": [
+      ],
+      "response": {
+        "_id": "electricalDatapoint",
+        "type": "ELECTRICAL"
+      }
+    },
+    {
+      "globalVariable": "controlDatapoint",
+      "reqType": "GET",
+      "serviceUrl": "data-points/<dataPointId>",
+      "rank": 2,
+      "params": [
+        {
+          "paramName": "dataPointId",
+          "paramsType": "PathRef",
+          "refType": "ListWithConditionOnResponse",
+          "rank": 1,
+          "path": "sensor._links.hasDataPoints._id",
+          "conditions": [
+            {
+              "propertyName": "type",
+              "operator": "Equals",
+              "value": "CONTROL"
+            }
+          ]
+        }
+      ],
+      "preConditions": [
+      ],
+      "response": {
+        "_id": "electricalDatapoint",
+        "type": "ELECTRICAL"
+      }
+    },
+    {
+      "globalVariable": "modbusNodeId",
+      "reqType": "GET",
+      "serviceUrl": "communication-nodes/<node_Id>",
+      "rank": 3,
+      "params": [
+        {
+          "paramName": "node_Id",
+          "paramsType": "PathRef",
+          "refType": "ListWithConditionOnResponse",
+          "rank": 1,
+          "path": "communication._links.hasNodes._id",
+          "conditions": [
+            {
+              "propertyName": "port.type",
+              "operator": "Equals",
+              "value": "MODBUS_VIRTUAL"
+            }
+          ]
+        }
+      ],
+      "preConditions": [],
+      "response": {
+        "_id": "modbusNodeId",
+        "port": {
+          "type": "ZIGBEE_PRO"
+        }
+      }
+    }
+  ],
   "configurator": [
     {
       "pdmShortNameIds": [
@@ -1727,140 +1861,6 @@
             ]
           }
         ]
-      }
-    }
-  ],
-  "globalVariableServices": [
-    {
-      "globalVariable": "deviceId",
-      "reqType": "GET",
-      "serviceUrl": "devices/<deviceId>",
-      "rank": 1,
-      "params": [
-        {
-          "paramName": "deviceId",
-          "paramsType": "FromClientApp",
-          "refType": "None",
-          "rank": 0,
-          "path": "",
-          "conditions": []
-        }
-      ],
-      "preConditions": [],
-      "response": {
-        "_id": "deviceId"
-      }
-    },
-    {
-      "globalVariable": "modbusNodeId",
-      "reqType": "GET",
-      "serviceUrl": "communication-nodes/<node_Id>",
-      "rank": 3,
-      "params": [
-        {
-          "paramName": "node_Id",
-          "paramsType": "PathRef",
-          "refType": "ListWithConditionOnResponse",
-          "rank": 1,
-          "path": "communication._links.hasNodes._id",
-          "conditions": [
-            {
-              "propertyName": "port.type",
-              "operator": "Equals",
-              "value": "MODBUS_VIRTUAL"
-            }
-          ]
-        }
-      ],
-      "preConditions": [],
-      "response": {
-        "_id": "modbusNodeId",
-        "port": {
-          "type": "ZIGBEE_PRO"
-        }
-      }
-    },
-    {
-      "globalVariable": "ambientDatapoint",
-      "reqType": "GET",
-      "serviceUrl": "data-points/<dataPointId>",
-      "rank": 5,
-      "params": [
-        {
-          "paramName": "dataPointId",
-          "paramsType": "PathRef",
-          "refType": "ListWithConditionOnResponse",
-          "rank": 1,
-          "path": "sensor._links.hasDataPoints._id",
-          "conditions": [
-            {
-              "propertyName": "type",
-              "operator": "Equals",
-              "value": "AMBIENT"
-            }
-          ]
-        }
-      ],
-      "preConditions": [],
-      "response": {
-        "_id": "ambientDatapoint",
-        "type": "AMBIENT"
-      }
-    },
-    {
-      "globalVariable": "electricalDatapoint",
-      "reqType": "GET",
-      "serviceUrl": "data-points/<dataPointId>",
-      "rank": 2,
-      "params": [
-        {
-          "paramName": "dataPointId",
-          "paramsType": "PathRef",
-          "refType": "ListWithConditionOnResponse",
-          "rank": 1,
-          "path": "sensor._links.hasDataPoints._id",
-          "conditions": [
-            {
-              "propertyName": "type",
-              "operator": "Equals",
-              "value": "ELECTRICAL"
-            }
-          ]
-        }
-      ],
-      "preConditions": [
-      ],
-      "response": {
-        "_id": "electricalDatapoint",
-        "type": "ELECTRICAL"
-      }
-    },
-    {
-      "globalVariable": "controlDatapoint",
-      "reqType": "GET",
-      "serviceUrl": "data-points/<dataPointId>",
-      "rank": 2,
-      "params": [
-        {
-          "paramName": "dataPointId",
-          "paramsType": "PathRef",
-          "refType": "ListWithConditionOnResponse",
-          "rank": 1,
-          "path": "sensor._links.hasDataPoints._id",
-          "conditions": [
-            {
-              "propertyName": "type",
-              "operator": "Equals",
-              "value": "CONTROL"
-            }
-          ]
-        }
-      ],
-      "preConditions": [
-      ],
-      "response": {
-        "_id": "electricalDatapoint",
-        "type": "ELECTRICAL"
       }
     }
   ]
