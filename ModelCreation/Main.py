@@ -435,40 +435,40 @@ class ModelCreation:
         phase_number = int(device["Phase"])
 
         # # Power supply
-        attribute1 = AdvancedSetting()
-        attribute1.pdmShortNameId = "LPHD1_PowSupCfg"
-        attribute1.dependentSettings = ["LPHD1_InstallationFromBrk"]
+        advancedSettings1 = AdvancedSetting()
+        advancedSettings1.pdmShortNameId = "LPHD1_PowSupCfg"
+        advancedSettings1.dependentSettings = ["LPHD1_InstallationFromBrk"]
         dependent_response_values = self.get_dependent_response_values(isneutralavailable, phase_number)
-        attribute1.dependentResponseValues = [dependent_response_values[0]]
+        advancedSettings1.dependentResponseValues = [dependent_response_values[0]]
         possible_derived_values_powersupply = self.get_possible_derived_values_powersupply(isneutralavailable, phase_number, device['ConversionType'], self.filtered_commercial_reference[36], self.filtered_commercial_reference[37])
-        attribute1.possibleDerivedValues = possible_derived_values_powersupply
+        advancedSettings1.possibleDerivedValues = possible_derived_values_powersupply
 
         # # Phase sequence read
-        attribute2 = AdvancedSetting()
-        attribute2.pdmShortNameId = "LPHD1_PhsRot"
-        attribute2.dependentSettings = ["LPHD1_InstallationFromBrk"]
-        attribute2.dependentResponseValues = dependent_response_values
+        advancedSettings2 = AdvancedSetting()
+        advancedSettings2.pdmShortNameId = "LPHD1_PhsRot"
+        advancedSettings2.dependentSettings = ["LPHD1_InstallationFromBrk"]
+        advancedSettings2.dependentResponseValues = dependent_response_values
         possible_derived_values_pasesequence = self.get_possible_derived_values_phasesequence(isneutralavailable, phase_number, device['ConversionType'], self.filtered_commercial_reference[36], self.filtered_commercial_reference[37])
-        attribute2.possibleDerivedValues = possible_derived_values_pasesequence
+        advancedSettings2.possibleDerivedValues = possible_derived_values_pasesequence
 
         # # Read
         read = Read()
-        read.advancedSettings.append(attribute1)
-        read.advancedSettings.append(attribute2)
+        read.advancedSettings.append(advancedSettings1)
+        read.advancedSettings.append(advancedSettings2)
 
         # Write
         write = Write()
         write.advancedSettings = []
         for n, att in enumerate(dependent_response_values):
-            attribute3 = AdvancedSetting()
-            attribute3.attribute = att
-            attribute3.dependentSettings = [
+            advancedSettings3 = AdvancedSetting()
+            advancedSettings3.attribute = att
+            advancedSettings3.dependentSettings = [
                 "LPHD1_InstallationFromBrk",
                 "LPHD1_PowSupCfg",
                 "LPHD1_PhsRot"
             ]
-            attribute3.possibleDerivedValues = self.get_possible_derived_values_write_phase_sequence(isneutralavailable, phase_number, device['ConversionType'], self.filtered_commercial_reference[36], self.filtered_commercial_reference[37], n)
-            write.advancedSettings.append(attribute3)
+            advancedSettings3.possibleDerivedValues = self.get_possible_derived_values_write_phase_sequence(isneutralavailable, phase_number, device['ConversionType'], self.filtered_commercial_reference[36], self.filtered_commercial_reference[37], n)
+            write.advancedSettings.append(advancedSettings3)
 
         for category in self.configurator.serviceMapping.categories:
             if "LPHD1_PowSupCfg" in category.pdmShortNameIds and "LPHD1_PhsRot" in category.pdmShortNameIds:
