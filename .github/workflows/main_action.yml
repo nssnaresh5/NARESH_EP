@@ -1,8 +1,8 @@
-name: sampleJob
+name: Sample job
 on: push
 jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
-        run: echo "hello world"
+      - name: Run one line script
+        run: echo "Hello world!"
